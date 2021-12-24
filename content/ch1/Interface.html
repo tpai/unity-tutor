@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Unity Tutorial Note</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content />
+    <meta name="generator" content="GitBook 3.2.2" />
+    <meta name="author" content="tonypai" />
+
+    <link rel="stylesheet" href="../gitbook/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="../gitbook/gitbook-plugin-comment/plugin.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../gitbook/gitbook-plugin-highlight/website.css"
+    />
+
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css" />
+
+    <link
+      rel="stylesheet"
+      href="../gitbook/gitbook-plugin-fontsettings/website.css"
+    />
+
+    <meta name="HandheldFriendly" content="true" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="152x152"
+      href="gitbook/images/apple-touch-icon-precomposed-152.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://gstatic.gitbook.com/images/b1c4c86ca817a71628d2debe73be9a64.ico"
+      type="image/x-icon"
+    />
+
+    <link rel="next" href="Outline.html" />
+
+    <link rel="prev" href="Preparation.html" />
+
+    <style>
+      .book .book-summary .book-search,
+      .book .book-summary ul.summary {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+      }
+      .book-summary {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        overflow-y: auto;
+      }
+      .book-summary > nav {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        overflow-y: overlay;
+      }
+      .gl-wrapper {
+        margin: 0;
+        display: block;
+        padding: 0;
+        position: relative;
+        line-height: 15px;
+        background: #fafafa;
+      }
+      .gl-wrapper:before {
+        background: -webkit-linear-gradient(
+          to bottom,
+          rgba(250, 250, 250, 0) 0%,
+          #fafafa 100%
+        );
+        background: -moz-linear-gradient(
+          to bottom,
+          rgba(250, 250, 250, 0) 0%,
+          #fafafa 100%
+        );
+        top: -24px;
+        width: 100%;
+        height: 24px;
+        content: "";
+        display: block;
+        position: absolute;
+        background: linear-gradient(
+          to bottom,
+          rgba(250, 250, 250, 0) 0%,
+          #fafafa 100%
+        );
+      }
+      .book.color-theme-1 .gl-wrapper {
+        background: #121212;
+      }
+      .book.color-theme-1 .gl-wrapper:before {
+        background: -webkit-linear-gradient(
+          to bottom,
+          rgba(18, 18, 18, 0) 0%,
+          #121212 100%
+        );
+        background: -moz-linear-gradient(
+          to bottom,
+          rgba(18, 18, 18, 0) 0%,
+          #121212 100%
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba(18, 18, 18, 0) 0%,
+          #121212 100%
+        );
+      }
+      .book.color-theme-2 .gl-wrapper {
+        background: #2e3243;
+      }
+      .book.color-theme-2 .gl-wrapper:before {
+        background: -webkit-linear-gradient(
+          to bottom,
+          rgba(46, 50, 67, 0) 0%,
+          #2e3243 100%
+        );
+        background: -moz-linear-gradient(
+          to bottom,
+          rgba(46, 50, 67, 0) 0%,
+          #2e3243 100%
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba(46, 50, 67, 0) 0%,
+          #2e3243 100%
+        );
+      }
+      .gl-wrapper .gitbook-link {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        color: #9daab6;
+        margin: 16px;
+        display: flex;
+        padding: 0;
+        align-items: center;
+        margin-left: 32px;
+        padding-top: 8px;
+        padding-left: 16px;
+        border-radius: 3px;
+        padding-right: 16px;
+        padding-bottom: 8px;
+        text-decoration: none;
+        background-color: #e6ecf1;
+        -webkit-box-align: center;
+      }
+      .gl-wrapper .tm-logo {
+        margin: 0;
+        display: block;
+        padding: 0;
+        font-size: 40px;
+      }
+      .gl-wrapper .tm-content {
+        flex: 1;
+        margin: 0;
+        display: block;
+        padding: 0;
+        padding-left: 16px;
+      }
+      .gl-wrapper .tm-content .container {
+        margin: 0;
+        display: block;
+        padding: 0;
+      }
+      .gl-wrapper .tm-content .tm-container .tm-text {
+        font-size: 12px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        line-height: 1.625;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="book">
+      <div class="book-summary">
+        <nav role="navigation">
+          <ul class="summary">
+            <li>
+              <a href="#" class="custom-link">Unity Tutorial Note</a>
+            </li>
+
+            <li class="divider"></li>
+
+            <li class="chapter" data-level="1.1" data-path="../">
+              <a href="../"> &#x7C21;&#x4ECB; </a>
+            </li>
+
+            <li
+              class="chapter"
+              data-level="1.2"
+              data-path="../xin-shou-shang-lu.html"
+            >
+              <a href="../xin-shou-shang-lu.html">
+                &#x65B0;&#x624B;&#x4E0A;&#x8DEF;
+              </a>
+
+              <ul class="articles">
+                <li
+                  class="chapter"
+                  data-level="1.2.1"
+                  data-path="Preparation.html"
+                >
+                  <a href="Preparation.html">
+                    &#x524D;&#x7F6E;&#x4F5C;&#x696D;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter active"
+                  data-level="1.2.2"
+                  data-path="Interface.html"
+                >
+                  <a href="Interface.html">
+                    &#x5E38;&#x7528;&#x4ECB;&#x9762;
+                  </a>
+                </li>
+
+                <li class="chapter" data-level="1.2.3" data-path="Outline.html">
+                  <a href="Outline.html"> &#x958B;&#x767C;&#x7DB1;&#x8981; </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.2.4"
+                  data-path="Gameobject.html"
+                >
+                  <a href="Gameobject.html">
+                    &#x904A;&#x6232;&#x7269;&#x4EF6;
+                  </a>
+                </li>
+
+                <li class="chapter" data-level="1.2.5" data-path="Tips.html">
+                  <a href="Tips.html"> &#x8A23;&#x7AC5;&#x6280;&#x5DE7; </a>
+                </li>
+
+                <li class="chapter" data-level="1.2.6" data-path="QA.html">
+                  <a href="QA.html"> &#x7591;&#x96E3;&#x96DC;&#x75C7; </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.2.7"
+                  data-path="Deployment.html"
+                >
+                  <a href="Deployment.html">
+                    &#x7DE8;&#x8B6F;&#x90E8;&#x7F72;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.2.8"
+                  data-path="FreeAssets.html"
+                >
+                  <a href="FreeAssets.html">
+                    &#x514D;&#x8CBB;&#x7D20;&#x6750;
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="chapter" data-level="1.3">
+              <span> &#x8173;&#x672C;&#x8A9E;&#x6CD5; </span>
+
+              <ul class="articles">
+                <li class="chapter" data-level="1.3.1">
+                  <span> &#x8A9E;&#x6CD5;&#x4ECB;&#x7D39; </span>
+
+                  <ul class="articles">
+                    <li
+                      class="chapter"
+                      data-level="1.3.1.1"
+                      data-path="../ch2/Syntax/Components.html"
+                    >
+                      <a href="../ch2/Syntax/Components.html">
+                        &#x5143;&#x4EF6;
+                      </a>
+                    </li>
+
+                    <li
+                      class="chapter"
+                      data-level="1.3.1.2"
+                      data-path="../ch2/Syntax/Class.html"
+                    >
+                      <a href="../ch2/Syntax/Class.html"> &#x985E;&#x5225; </a>
+                    </li>
+
+                    <li
+                      class="chapter"
+                      data-level="1.3.1.3"
+                      data-path="../ch2/Syntax/Else.html"
+                    >
+                      <a href="../ch2/Syntax/Else.html"> &#x5176;&#x4ED6; </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.3.2"
+                  data-path="../ch2/ScriptLifecycle.html"
+                >
+                  <a href="../ch2/ScriptLifecycle.html">
+                    &#x4E8B;&#x4EF6;&#x9031;&#x671F;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.3.3"
+                  data-path="../ch2/UsefulScripts.html"
+                >
+                  <a href="../ch2/UsefulScripts.html">
+                    &#x597D;&#x7528;&#x8173;&#x672C;
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="chapter" data-level="1.4">
+              <span> &#x9032;&#x968E;&#x6574;&#x5408; </span>
+
+              <ul class="articles">
+                <li class="chapter" data-level="1.4.1">
+                  <span> &#x904A;&#x6232;&#x670D;&#x52D9; </span>
+
+                  <ul class="articles">
+                    <li
+                      class="chapter"
+                      data-level="1.4.1.1"
+                      data-path="../ch3/GoogleGameService.html"
+                    >
+                      <a href="../ch3/GoogleGameService.html">
+                        Google Game Service
+                      </a>
+                    </li>
+
+                    <li
+                      class="chapter"
+                      data-level="1.4.1.2"
+                      data-path="../ch3/FacebookSDK.html"
+                    >
+                      <a href="../ch3/FacebookSDK.html"> Facebook SDK </a>
+                    </li>
+
+                    <li
+                      class="chapter"
+                      data-level="1.4.1.3"
+                      data-path="../ch3/GameJoltSDK.html"
+                    >
+                      <a href="../ch3/GameJoltSDK.html"> GameJolt SDK </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.4.2"
+                  data-path="../ch3/InAppPurchase.html"
+                >
+                  <a href="../ch3/InAppPurchase.html">
+                    &#x5167;&#x8CFC;&#x6D88;&#x8CBB;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.4.3"
+                  data-path="../ch3/Advertisement.html"
+                >
+                  <a href="../ch3/Advertisement.html">
+                    &#x7F6E;&#x5165;&#x5EE3;&#x544A;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.4.4"
+                  data-path="../ch3/ApplePushNotificationService.html"
+                >
+                  <a href="../ch3/ApplePushNotificationService.html">
+                    &#x8A0A;&#x606F;&#x63A8;&#x64AD;
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="chapter" data-level="1.5">
+              <span> &#x958B;&#x767C;&#x96DC;&#x8A18; </span>
+
+              <ul class="articles">
+                <li
+                  class="chapter"
+                  data-level="1.5.1"
+                  data-path="../ch4/OptimizePerformance.html"
+                >
+                  <a href="../ch4/OptimizePerformance.html">
+                    &#x512A;&#x5316;&#x6280;&#x5DE7;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.2"
+                  data-path="../ch4/DifferenciesBetweenUnityscriptAndCsharp.html"
+                >
+                  <a href="../ch4/DifferenciesBetweenUnityscriptAndCsharp.html">
+                    &#x8A9E;&#x8A00;&#x5DEE;&#x7570;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.3"
+                  data-path="../ch4/DesignPattern.html"
+                >
+                  <a href="../ch4/DesignPattern.html">
+                    &#x8A2D;&#x8A08;&#x6A21;&#x5F0F;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.4"
+                  data-path="../ch4/Navigation.html"
+                >
+                  <a href="../ch4/Navigation.html">
+                    &#x81EA;&#x52D5;&#x5C0B;&#x8DEF;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.5"
+                  data-path="../ch4/Controller.html"
+                >
+                  <a href="../ch4/Controller.html">
+                    &#x624B;&#x628A;&#x8A2D;&#x7F6E;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.6"
+                  data-path="../ch4/ProjectManagement.html"
+                >
+                  <a href="../ch4/ProjectManagement.html">
+                    &#x5C08;&#x6848;&#x63A7;&#x7BA1;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.7"
+                  data-path="../ch4/OOP.html"
+                >
+                  <a href="../ch4/OOP.html">
+                    &#x7269;&#x4EF6;&#x5C0E;&#x5411;
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="divider"></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="book-body">
+        <div class="body-inner">
+          <div class="page-wrapper" tabindex="-1" role="main">
+            <div class="page-inner">
+              <div id="book-search-results">
+                <div class="search-noresults">
+                  <section class="normal markdown-section">
+                    <h1 id="&#x5E38;&#x7528;&#x4ECB;&#x9762;">
+                      &#x5E38;&#x7528;&#x4ECB;&#x9762;
+                    </h1>
+                    <ul>
+                      <li>
+                        Hierarchy -
+                        &#x5834;&#x666F;&#x4E2D;&#x904A;&#x6232;&#x7269;&#x4EF6;&#x5217;&#x8868;
+                      </li>
+                      <li>Scene - &#x5834;&#x666F;&#x7DE8;&#x8F2F;</li>
+                      <li>Game - &#x5834;&#x666F;&#x9810;&#x89BD;</li>
+                      <li>
+                        Inspector - &#x7269;&#x4EF6;&#x6AA2;&#x8996;&#x5668;
+                      </li>
+                      <li>
+                        Project - &#x5C08;&#x6848;&#x8CC7;&#x6599;&#x593E;
+                      </li>
+                      <li>
+                        Animation - &#x52D5;&#x756B;&#x7DE8;&#x8F2F;&#x5668;
+                      </li>
+                      <li>
+                        Animator - &#x52D5;&#x756B;&#x63A7;&#x5236;&#x5668;
+                      </li>
+                      <li>Console - &#x9664;&#x932F;&#x8A0A;&#x606F;</li>
+                      <li>Asset Store - &#x8CC7;&#x6E90;&#x5546;&#x5E97;</li>
+                      <li>
+                        Layer - &#x7269;&#x4EF6;&#x5206;&#x5C64;&#x9078;&#x55AE;
+                      </li>
+                      <li>
+                        Center/Pivot Settings
+                        &#x4E2D;&#x9EDE;/&#x9328;&#x9EDE;&#x8A2D;&#x7F6E;
+                      </li>
+                    </ul>
+                    <h2 id="scene-&#x5834;&#x666F;&#x7DE8;&#x8F2F;">
+                      Scene &#x5834;&#x666F;&#x7DE8;&#x8F2F;
+                    </h2>
+                    <p><strong>&#x5FEB;&#x6377;&#x9375;</strong></p>
+                    <ul>
+                      <li>
+                        &#x756B;&#x9762;&#x62D6;&#x66F3;&#xFF1A;Q&#x6216;&#x6ED1;&#x9F20;&#x4E2D;&#x9375;
+                      </li>
+                      <li>
+                        &#x756B;&#x9762;&#x65CB;&#x8F49;&#xFF1A;Alt+&#x6ED1;&#x9F20;&#x5DE6;&#x9375;
+                      </li>
+                      <li>
+                        &#x756B;&#x9762;&#x7E2E;&#x653E;&#xFF1A;Alt+&#x6ED1;&#x9F20;&#x53F3;&#x9375;&#x6216;&#x6ED1;&#x9F20;&#x6EFE;&#x8F2A;
+                      </li>
+                      <li>&#x7269;&#x4EF6;&#x62D6;&#x66F3;&#xFF1A;W</li>
+                      <li>&#x7269;&#x4EF6;&#x65CB;&#x8F49;&#xFF1A;E</li>
+                      <li>&#x7269;&#x4EF6;&#x7E2E;&#x653E;&#xFF1A;R</li>
+                      <li>&#x5716;&#x50CF;&#x7E2E;&#x653E;&#xFF1A;T</li>
+                      <li>
+                        &#x5C07;&#x9078;&#x5B9A;&#x7269;&#x4EF6;&#x5C08;&#x6CE8;&#x65BC;&#x756B;&#x9762;&#x4E2D;&#x592E;&#xFF1A;&#x9078;&#x5B9A;&#x7269;&#x4EF6;&#x5F8C;&#x6309;F
+                      </li>
+                    </ul>
+                    <h2 id="game-&#x5834;&#x666F;&#x9810;&#x89BD;">
+                      Game &#x5834;&#x666F;&#x9810;&#x89BD;
+                    </h2>
+                    <ul>
+                      <li>
+                        Free
+                        Aspect&#xFF1A;&#x8ABF;&#x6574;&#x904A;&#x6232;&#x756B;&#x9762;&#x6BD4;&#x4F8B;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;&#x5728;iOS&#x5E73;&#x53F0;&#x4E4B;&#x4E0B;&#x53EF;&#x4EE5;&#x6839;&#x64DA;&#x4E0D;&#x540C;&#x6B3E;&#x88DD;&#x7F6E;&#x8ABF;&#x6574;&#x89E3;&#x6790;&#x5EA6;&#x3002;
+                      </li>
+                      <li>
+                        Maxmize on
+                        Play&#xFF1A;&#x904A;&#x6232;&#x57F7;&#x884C;&#x6642;&#x5C07;&#x756B;&#x9762;&#x653E;&#x5230;&#x6700;&#x5927;&#x3002;
+                      </li>
+                      <li>
+                        Mute
+                        Audio&#xFF1A;&#x904A;&#x6232;&#x57F7;&#x884C;&#x6642;&#x95DC;&#x9589;&#x97F3;&#x6548;&#x3002;
+                      </li>
+                      <li>
+                        Stats&#xFF1A;&#x89C0;&#x5BDF;&#x97F3;&#x6548;&#x3001;&#x7E6A;&#x5716;&#x6548;&#x80FD;&#x4EE5;&#x53CA;&#x7DB2;&#x8DEF;&#x7B49;&#x6578;&#x503C;&#x3002;
+                      </li>
+                      <li>
+                        Gizmos&#xFF1A;&#x986F;&#x793A;&#x5728;&#x7DE8;&#x8F2F;&#x8996;&#x7A97;&#x6703;&#x51FA;&#x73FE;&#x7684;&#x8F14;&#x52A9;&#x5C0F;&#x5716;&#x793A;&#x3002;
+                      </li>
+                    </ul>
+                    <h2 id="inspector-&#x7269;&#x4EF6;&#x6AA2;&#x8996;&#x5668;">
+                      Inspector &#x7269;&#x4EF6;&#x6AA2;&#x8996;&#x5668;
+                    </h2>
+                    <p>
+                      &#x6AA2;&#x8996;&#x904A;&#x6232;&#x7269;&#x4EF6;&#x4E2D;&#x6240;&#x5305;&#x542B;&#x7684;&#x5143;&#x4EF6;&#x8207;&#x5C6C;&#x6027;&#xFF0C;&#x540C;&#x6642;&#x4EA6;&#x53EF;&#x4EE5;&#x9032;&#x884C;&#x7DE8;&#x8F2F;&#x3002;
+                    </p>
+                    <h2 id="project-&#x5C08;&#x6848;&#x8CC7;&#x6599;&#x593E;">
+                      Project &#x5C08;&#x6848;&#x8CC7;&#x6599;&#x593E;
+                    </h2>
+                    <p>
+                      &#x5C08;&#x6848;&#x7684;&#x6240;&#x6709;&#x7D20;&#x6750;&#x90FD;&#x4F4D;&#x65BC;&#x6B64;&#x7A97;&#x683C;&#x7576;&#x4E2D;&#xFF0C;&#x5305;&#x542B;2D&#x5716;&#x3001;3D&#x6A21;&#x578B;&#x3001;&#x8173;&#x672C;&#x3001;&#x5834;&#x666F;&#x53CA;&#x52D5;&#x756B;&#x7B49;&#xFF0C;&#x4E26;&#x4E14;&#x53EA;&#x8981;&#x7528;&#x62D6;&#x66F3;&#x7684;&#x65B9;&#x5F0F;&#x4FBF;&#x53EF;&#x532F;&#x5165;&#x7D20;&#x6750;&#x3002;&#x8981;&#x6253;&#x958B;&#x7279;&#x5B9A;&#x7D20;&#x6750;&#x6240;&#x5728;&#x7684;&#x5BE6;&#x9AD4;&#x8CC7;&#x6599;&#x593E;&#x4F4D;&#x7F6E;&#xFF0C;&#x53EA;&#x9700;&#x53F3;&#x9375;&#x9EDE;&#x64CA;&#x8A72;&#x7269;&#x4EF6;&#x9078;Show
+                      in Explorer(Win)&#x6216;Reveal in
+                      Finder(Mac)&#x5373;&#x53EF;&#x3002;
+                    </p>
+                    <h2 id="animation-&#x52D5;&#x756B;&#x7DE8;&#x8F2F;&#x5668;">
+                      Animation &#x52D5;&#x756B;&#x7DE8;&#x8F2F;&#x5668;
+                    </h2>
+                    <p>
+                      &#x6BCF;&#x500B;&#x52D5;&#x756B;&#x7247;&#x6BB5;&#x5305;&#x62EC;&#x4E86;&#x8A31;&#x591A;&#x5143;&#x4EF6;(Transform,
+                      Sprite)&#x8207;&#x5F71;&#x683C;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x900F;&#x904E;&#x4FEE;&#x6539;&#x5C6C;&#x6027;(position,
+                      color)&#x4F86;&#x9054;&#x6210;&#x52D5;&#x756B;&#x6548;&#x679C;&#x3002;
+                    </p>
+                    <p>
+                      &#x89D2;&#x8272;&#x52D5;&#x756B;&#x53EF;&#x4EE5;&#x4EE5;&#x4E00;&#x5F35;&#x5716;&#x5448;&#x73FE;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5C07;&#x5404;&#x500B;&#x95DC;&#x7BC0;&#x62C6;&#x89E3;&#x958B;&#x4F86;&#x5206;&#x5225;&#x88FD;&#x4F5C;&#xFF0C;&#x7576;&#x7136;&#x5F8C;&#x8005;&#x5728;&#x52D5;&#x4F5C;&#x90E8;&#x5206;&#x7684;&#x5448;&#x73FE;&#x6703;&#x6BD4;&#x8F03;&#x7D30;&#x81A9;&#xFF0C;&#x4F46;&#x76F8;&#x5C0D;&#x7684;&#x6240;&#x82B1;&#x8CBB;&#x7684;&#x6642;&#x9593;&#x8DDF;&#x4EBA;&#x529B;&#x6210;&#x672C;&#x4E5F;&#x5C31;&#x9AD8;&#x3002;
+                    </p>
+                    <h2 id="animator-&#x52D5;&#x756B;&#x63A7;&#x5236;&#x5668;">
+                      Animator &#x52D5;&#x756B;&#x63A7;&#x5236;&#x5668;
+                    </h2>
+                    <p>
+                      Animator&#x5F62;&#x5BB9;&#x6210;&#x63A7;&#x5236;&#x7269;&#x4EF6;&#x7684;&#x72C0;&#x614B;&#x6BD4;&#x8F03;&#x8CBC;&#x5207;&#xFF0C;&#x50CF;&#x662F;&#x5F9E;&#x5F85;&#x547D;(Idle)&#x72C0;&#x614B;&#x8F49;&#x63DB;&#x5230;&#x8D70;&#x52D5;(Walk)&#x72C0;&#x614B;&#xFF0C;&#x5176;&#x8F49;&#x63DB;&#x689D;&#x4EF6;&#x662F;&#x4EE5;&#x52D5;&#x756B;&#x53C3;&#x6578;&#x70BA;&#x4F9D;&#x64DA;&#x3002;
+                    </p>
+                    <h2 id="console-&#x9664;&#x932F;&#x8A0A;&#x606F;">
+                      Console &#x9664;&#x932F;&#x8A0A;&#x606F;
+                    </h2>
+                    <p>
+                      &#x6240;&#x6709;Debug&#x4EE5;&#x53CA;Error&#x7684;&#x8A0A;&#x606F;&#x7686;&#x6703;&#x8A73;&#x5217;&#x5728;&#x6B64;&#x7A97;&#x683C;&#xFF0C;&#x70BA;&#x4E86;&#x907F;&#x514D;&#x6DF7;&#x6DC6;&#x500B;&#x4EBA;&#x5EFA;&#x8B70;&#x52FE;&#x9078;Clear
+                      on
+                      Play&#xFF0C;&#x5728;&#x904A;&#x6232;&#x57F7;&#x884C;&#x7684;&#x6642;&#x5019;&#x6E05;&#x7A7A;&#x4E0A;&#x4E00;&#x6B21;&#x57F7;&#x884C;&#x6240;&#x7522;&#x751F;&#x7684;&#x8A0A;&#x606F;&#x3002;
+                    </p>
+                    <h2 id="asset-store-&#x8CC7;&#x6E90;&#x5546;&#x5E97;">
+                      Asset Store &#x8CC7;&#x6E90;&#x5546;&#x5E97;
+                    </h2>
+                    <p>
+                      <strong
+                        >&#x8CC7;&#x6E90;&#x4E0B;&#x8F09;&#x6B65;&#x9A5F;</strong
+                      >
+                    </p>
+                    <blockquote>
+                      <ol>
+                        <li>Window &gt; Asset Store</li>
+                        <li>
+                          &#x8F38;&#x5165;&#x95DC;&#x9375;&#x5B57;&#x641C;&#x5C0B;
+                          (ex. 2d platformer)
+                        </li>
+                        <li>Download / Import</li>
+                        <li>
+                          &#x7BE9;&#x9078;&#x9700;&#x8981;&#x7684;&#x7D20;&#x6750;&#x5F8C;&#x6309;&#x4E0B;Import
+                        </li>
+                      </ol>
+                    </blockquote>
+                    <p>
+                      <strong>&#x5C0E;&#x5165;&#x8CC7;&#x6E90;&#x5305;</strong>
+                    </p>
+                    <blockquote>
+                      <p>Assets &gt; Import Package &gt; Custom Package...</p>
+                    </blockquote>
+                    <p>
+                      <strong>&#x532F;&#x51FA;&#x8CC7;&#x6E90;&#x5305;</strong>
+                    </p>
+                    <blockquote>
+                      <ol>
+                        <li>
+                          Assets &gt; Export Package //
+                          &#x5148;&#x5728;Project&#x9078;&#x64C7;&#x8981;&#x532F;&#x51FA;&#x7684;&#x8CC7;&#x6E90;
+                        </li>
+                        <li>
+                          &#x76F4;&#x63A5;&#x9078;&#x53D6;&#x7269;&#x4EF6;&#x5F8C;&#x9EDE;&#x64CA;&#x53F3;&#x9375;
+                          Export Package...
+                        </li>
+                      </ol>
+                    </blockquote>
+                    <h2 id="layer-&#x7269;&#x4EF6;&#x5C64;&#x9078;&#x55AE;">
+                      Layer &#x7269;&#x4EF6;&#x5C64;&#x9078;&#x55AE;
+                    </h2>
+                    <p>
+                      <strong
+                        >&#x7DE8;&#x8F2F;&#x5834;&#x666F;&#x6642;&#x5982;&#x4F55;&#x907F;&#x514D;&#x52D5;&#x5230;&#x80CC;&#x666F;</strong
+                      >
+                    </p>
+                    <p>
+                      &#x4F7F;&#x7528;Unity&#x7DE8;&#x8F2F;&#x5668;&#x53F3;&#x4E0A;&#x89D2;&#x7684;Layer&#x5DE5;&#x5177;&#xFF0C;&#x80CC;&#x666F;&#x7269;&#x4EF6;&#x6240;&#x5C6C;&#x7684;Layer&#x6216;Sorting
+                      Layer&#x5C07;&#x5176;Lock&#x6216;Hide&#x3002;&#x5982;&#x4E0B;&#x5716;&#x6240;&#x793A;&#xFF0C;&#x53EF;&#x907F;&#x514D;&#x5728;&#x7DE8;&#x8F2F;&#x6642;&#x9EDE;&#x9078;&#x6216;&#x62D6;&#x62C9;&#x5230;&#x3002;
+                    </p>
+                    <p><img src="http://i.imgur.com/JBdkyQY.png" alt /></p>
+                    <h2
+                      id="centerpivot-settings-&#x4E2D;&#x9EDE;&#x9328;&#x9EDE;&#x8A2D;&#x7F6E;"
+                    >
+                      Center/Pivot Settings
+                      &#x4E2D;&#x9EDE;/&#x9328;&#x9EDE;&#x8A2D;&#x7F6E;
+                    </h2>
+                    <p>
+                      <strong
+                        >&#x5C0E;&#x5165;&#x7684;3D&#x6A21;&#x578B;&#x4EE5;&#x9328;&#x9EDE;&#x70BA;&#x4E2D;&#x5FC3;&#x65CB;&#x8F49;</strong
+                      >
+                    </p>
+                    <p>
+                      &#x900F;&#x904E;&#x5207;&#x63DB;&#x4F4D;&#x65BC;Scene&#x7A97;&#x683C;&#x4E0A;&#x65B9;&#x7684;Center/Pivot
+                      Setting&#x4F86;&#x9054;&#x6210;&#x3002;
+                    </p>
+                    <p><img src="http://i.stack.imgur.com/MLISR.png" alt /></p>
+                    <blockquote>
+                      <p>
+                        Ref:
+                        <a
+                          href="http://stackoverflow.com/questions/22693362/unity-objects-not-rotating-around-pivot-point"
+                          target="_blank"
+                          >unity-objects-not-rotating-around-pivot-point</a
+                        >
+                      </p>
+                    </blockquote>
+                  </section>
+                </div>
+                <div class="search-results">
+                  <div class="has-results">
+                    <h1 class="search-results-title">
+                      <span class="search-results-count"></span> results
+                      matching &quot;<span class="search-query"></span>&quot;
+                    </h1>
+                    <ul class="search-results-list"></ul>
+                  </div>
+                  <div class="no-results">
+                    <h1 class="search-results-title">
+                      No results matching &quot;<span
+                        class="search-query"
+                      ></span
+                      >&quot;
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="Preparation.html"
+          class="navigation navigation-prev"
+          aria-label="Previous page: &#x524D;&#x7F6E;&#x4F5C;&#x696D;"
+        >
+          <i class="fa fa-angle-left"></i>
+        </a>
+
+        <a
+          href="Outline.html"
+          class="navigation navigation-next"
+          aria-label="Next page: &#x958B;&#x767C;&#x7DB1;&#x8981;"
+        >
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
+
+      <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+          gitbook.page.hasChanged({
+            page: {
+              title: "常用介面",
+              level: "1.2.2",
+              depth: 2,
+              next: {
+                title: "開發綱要",
+                level: "1.2.3",
+                depth: 2,
+                path: "ch1/Outline.md",
+                ref: "ch1/Outline.md",
+                articles: [],
+              },
+              previous: {
+                title: "前置作業",
+                level: "1.2.1",
+                depth: 2,
+                path: "ch1/Preparation.md",
+                ref: "ch1/Preparation.md",
+                articles: [],
+              },
+              dir: "ltr",
+            },
+            config: {
+              plugins: ["comment"],
+              styles: {
+                website: "styles/website.css",
+                pdf: "styles/pdf.css",
+                epub: "styles/epub.css",
+                mobi: "styles/mobi.css",
+                ebook: "styles/ebook.css",
+                print: "styles/print.css",
+              },
+              pluginsConfig: {
+                comment: { highlightCommented: true },
+                highlight: {},
+                search: {},
+                lunr: { maxIndexSize: 1000000, ignoreSpecialCharacters: false },
+                sharing: {
+                  facebook: true,
+                  twitter: true,
+                  google: false,
+                  weibo: false,
+                  instapaper: false,
+                  vk: false,
+                  all: ["facebook", "google", "twitter", "weibo", "instapaper"],
+                },
+                fontsettings: { theme: "white", family: "sans", size: 2 },
+                "theme-default": {
+                  styles: {
+                    website: "styles/website.css",
+                    pdf: "styles/pdf.css",
+                    epub: "styles/epub.css",
+                    mobi: "styles/mobi.css",
+                    ebook: "styles/ebook.css",
+                    print: "styles/print.css",
+                  },
+                  showLevel: false,
+                },
+              },
+              theme: "default",
+              author: "tonypai",
+              pdf: {
+                pageNumbers: true,
+                fontSize: 16,
+                fontFamily: "Arial",
+                paperSize: "a4",
+                chapterMark: "pagebreak",
+                pageBreaksBefore: "/",
+                margin: { right: 62, left: 62, top: 56, bottom: 56 },
+              },
+              structure: {
+                langs: "LANGS.md",
+                readme: "README.md",
+                glossary: "GLOSSARY.md",
+                summary: "SUMMARY.md",
+              },
+              variables: {},
+              title: "Unity Tutorial Note",
+              language: "zh",
+              links: {
+                sidebar: {
+                  "Unity Tutorial Note":
+                    "https://www.gitbook.com/book/tpai/unity-tutorial-note",
+                },
+                gitbook: true,
+              },
+              gitbook: "*",
+              description:
+                "本書為Unity教學課程的筆記，主要內容圍繞著課堂專案所使用到的語法、操作以及技巧為主，供同學複習以及交流。",
+            },
+            file: {
+              path: "ch1/Interface.md",
+              mtime: "2017-04-18T05:49:33.000Z",
+              type: "markdown",
+            },
+            gitbook: { version: "3.2.2", time: "2017-04-18T05:49:45.242Z" },
+            basePath: "..",
+            book: { language: "" },
+          });
+        });
+      </script>
+    </div>
+
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-comment/plugin.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+  </body>
+</html>

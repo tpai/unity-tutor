@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Unity Tutorial Note</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content />
+    <meta name="generator" content="GitBook 3.2.2" />
+    <meta name="author" content="tonypai" />
+
+    <link rel="stylesheet" href="../gitbook/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="../gitbook/gitbook-plugin-comment/plugin.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../gitbook/gitbook-plugin-highlight/website.css"
+    />
+
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css" />
+
+    <link
+      rel="stylesheet"
+      href="../gitbook/gitbook-plugin-fontsettings/website.css"
+    />
+
+    <meta name="HandheldFriendly" content="true" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="152x152"
+      href="gitbook/images/apple-touch-icon-precomposed-152.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://gstatic.gitbook.com/images/b1c4c86ca817a71628d2debe73be9a64.ico"
+      type="image/x-icon"
+    />
+
+    <link rel="next" href="Tips.html" />
+
+    <link rel="prev" href="Outline.html" />
+
+    <style>
+      .book .book-summary .book-search,
+      .book .book-summary ul.summary {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+      }
+      .book-summary {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        overflow-y: auto;
+      }
+      .book-summary > nav {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        overflow-y: overlay;
+      }
+      .gl-wrapper {
+        margin: 0;
+        display: block;
+        padding: 0;
+        position: relative;
+        line-height: 15px;
+        background: #fafafa;
+      }
+      .gl-wrapper:before {
+        background: -webkit-linear-gradient(
+          to bottom,
+          rgba(250, 250, 250, 0) 0%,
+          #fafafa 100%
+        );
+        background: -moz-linear-gradient(
+          to bottom,
+          rgba(250, 250, 250, 0) 0%,
+          #fafafa 100%
+        );
+        top: -24px;
+        width: 100%;
+        height: 24px;
+        content: "";
+        display: block;
+        position: absolute;
+        background: linear-gradient(
+          to bottom,
+          rgba(250, 250, 250, 0) 0%,
+          #fafafa 100%
+        );
+      }
+      .book.color-theme-1 .gl-wrapper {
+        background: #121212;
+      }
+      .book.color-theme-1 .gl-wrapper:before {
+        background: -webkit-linear-gradient(
+          to bottom,
+          rgba(18, 18, 18, 0) 0%,
+          #121212 100%
+        );
+        background: -moz-linear-gradient(
+          to bottom,
+          rgba(18, 18, 18, 0) 0%,
+          #121212 100%
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba(18, 18, 18, 0) 0%,
+          #121212 100%
+        );
+      }
+      .book.color-theme-2 .gl-wrapper {
+        background: #2e3243;
+      }
+      .book.color-theme-2 .gl-wrapper:before {
+        background: -webkit-linear-gradient(
+          to bottom,
+          rgba(46, 50, 67, 0) 0%,
+          #2e3243 100%
+        );
+        background: -moz-linear-gradient(
+          to bottom,
+          rgba(46, 50, 67, 0) 0%,
+          #2e3243 100%
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba(46, 50, 67, 0) 0%,
+          #2e3243 100%
+        );
+      }
+      .gl-wrapper .gitbook-link {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        color: #9daab6;
+        margin: 16px;
+        display: flex;
+        padding: 0;
+        align-items: center;
+        margin-left: 32px;
+        padding-top: 8px;
+        padding-left: 16px;
+        border-radius: 3px;
+        padding-right: 16px;
+        padding-bottom: 8px;
+        text-decoration: none;
+        background-color: #e6ecf1;
+        -webkit-box-align: center;
+      }
+      .gl-wrapper .tm-logo {
+        margin: 0;
+        display: block;
+        padding: 0;
+        font-size: 40px;
+      }
+      .gl-wrapper .tm-content {
+        flex: 1;
+        margin: 0;
+        display: block;
+        padding: 0;
+        padding-left: 16px;
+      }
+      .gl-wrapper .tm-content .container {
+        margin: 0;
+        display: block;
+        padding: 0;
+      }
+      .gl-wrapper .tm-content .tm-container .tm-text {
+        font-size: 12px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        line-height: 1.625;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="book">
+      <div class="book-summary">
+        <nav role="navigation">
+          <ul class="summary">
+            <li>
+              <a href="#" class="custom-link">Unity Tutorial Note</a>
+            </li>
+
+            <li class="divider"></li>
+
+            <li class="chapter" data-level="1.1" data-path="../">
+              <a href="../"> &#x7C21;&#x4ECB; </a>
+            </li>
+
+            <li
+              class="chapter"
+              data-level="1.2"
+              data-path="../xin-shou-shang-lu.html"
+            >
+              <a href="../xin-shou-shang-lu.html">
+                &#x65B0;&#x624B;&#x4E0A;&#x8DEF;
+              </a>
+
+              <ul class="articles">
+                <li
+                  class="chapter"
+                  data-level="1.2.1"
+                  data-path="Preparation.html"
+                >
+                  <a href="Preparation.html">
+                    &#x524D;&#x7F6E;&#x4F5C;&#x696D;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.2.2"
+                  data-path="Interface.html"
+                >
+                  <a href="Interface.html">
+                    &#x5E38;&#x7528;&#x4ECB;&#x9762;
+                  </a>
+                </li>
+
+                <li class="chapter" data-level="1.2.3" data-path="Outline.html">
+                  <a href="Outline.html"> &#x958B;&#x767C;&#x7DB1;&#x8981; </a>
+                </li>
+
+                <li
+                  class="chapter active"
+                  data-level="1.2.4"
+                  data-path="Gameobject.html"
+                >
+                  <a href="Gameobject.html">
+                    &#x904A;&#x6232;&#x7269;&#x4EF6;
+                  </a>
+                </li>
+
+                <li class="chapter" data-level="1.2.5" data-path="Tips.html">
+                  <a href="Tips.html"> &#x8A23;&#x7AC5;&#x6280;&#x5DE7; </a>
+                </li>
+
+                <li class="chapter" data-level="1.2.6" data-path="QA.html">
+                  <a href="QA.html"> &#x7591;&#x96E3;&#x96DC;&#x75C7; </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.2.7"
+                  data-path="Deployment.html"
+                >
+                  <a href="Deployment.html">
+                    &#x7DE8;&#x8B6F;&#x90E8;&#x7F72;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.2.8"
+                  data-path="FreeAssets.html"
+                >
+                  <a href="FreeAssets.html">
+                    &#x514D;&#x8CBB;&#x7D20;&#x6750;
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="chapter" data-level="1.3">
+              <span> &#x8173;&#x672C;&#x8A9E;&#x6CD5; </span>
+
+              <ul class="articles">
+                <li class="chapter" data-level="1.3.1">
+                  <span> &#x8A9E;&#x6CD5;&#x4ECB;&#x7D39; </span>
+
+                  <ul class="articles">
+                    <li
+                      class="chapter"
+                      data-level="1.3.1.1"
+                      data-path="../ch2/Syntax/Components.html"
+                    >
+                      <a href="../ch2/Syntax/Components.html">
+                        &#x5143;&#x4EF6;
+                      </a>
+                    </li>
+
+                    <li
+                      class="chapter"
+                      data-level="1.3.1.2"
+                      data-path="../ch2/Syntax/Class.html"
+                    >
+                      <a href="../ch2/Syntax/Class.html"> &#x985E;&#x5225; </a>
+                    </li>
+
+                    <li
+                      class="chapter"
+                      data-level="1.3.1.3"
+                      data-path="../ch2/Syntax/Else.html"
+                    >
+                      <a href="../ch2/Syntax/Else.html"> &#x5176;&#x4ED6; </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.3.2"
+                  data-path="../ch2/ScriptLifecycle.html"
+                >
+                  <a href="../ch2/ScriptLifecycle.html">
+                    &#x4E8B;&#x4EF6;&#x9031;&#x671F;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.3.3"
+                  data-path="../ch2/UsefulScripts.html"
+                >
+                  <a href="../ch2/UsefulScripts.html">
+                    &#x597D;&#x7528;&#x8173;&#x672C;
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="chapter" data-level="1.4">
+              <span> &#x9032;&#x968E;&#x6574;&#x5408; </span>
+
+              <ul class="articles">
+                <li class="chapter" data-level="1.4.1">
+                  <span> &#x904A;&#x6232;&#x670D;&#x52D9; </span>
+
+                  <ul class="articles">
+                    <li
+                      class="chapter"
+                      data-level="1.4.1.1"
+                      data-path="../ch3/GoogleGameService.html"
+                    >
+                      <a href="../ch3/GoogleGameService.html">
+                        Google Game Service
+                      </a>
+                    </li>
+
+                    <li
+                      class="chapter"
+                      data-level="1.4.1.2"
+                      data-path="../ch3/FacebookSDK.html"
+                    >
+                      <a href="../ch3/FacebookSDK.html"> Facebook SDK </a>
+                    </li>
+
+                    <li
+                      class="chapter"
+                      data-level="1.4.1.3"
+                      data-path="../ch3/GameJoltSDK.html"
+                    >
+                      <a href="../ch3/GameJoltSDK.html"> GameJolt SDK </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.4.2"
+                  data-path="../ch3/InAppPurchase.html"
+                >
+                  <a href="../ch3/InAppPurchase.html">
+                    &#x5167;&#x8CFC;&#x6D88;&#x8CBB;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.4.3"
+                  data-path="../ch3/Advertisement.html"
+                >
+                  <a href="../ch3/Advertisement.html">
+                    &#x7F6E;&#x5165;&#x5EE3;&#x544A;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.4.4"
+                  data-path="../ch3/ApplePushNotificationService.html"
+                >
+                  <a href="../ch3/ApplePushNotificationService.html">
+                    &#x8A0A;&#x606F;&#x63A8;&#x64AD;
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="chapter" data-level="1.5">
+              <span> &#x958B;&#x767C;&#x96DC;&#x8A18; </span>
+
+              <ul class="articles">
+                <li
+                  class="chapter"
+                  data-level="1.5.1"
+                  data-path="../ch4/OptimizePerformance.html"
+                >
+                  <a href="../ch4/OptimizePerformance.html">
+                    &#x512A;&#x5316;&#x6280;&#x5DE7;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.2"
+                  data-path="../ch4/DifferenciesBetweenUnityscriptAndCsharp.html"
+                >
+                  <a href="../ch4/DifferenciesBetweenUnityscriptAndCsharp.html">
+                    &#x8A9E;&#x8A00;&#x5DEE;&#x7570;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.3"
+                  data-path="../ch4/DesignPattern.html"
+                >
+                  <a href="../ch4/DesignPattern.html">
+                    &#x8A2D;&#x8A08;&#x6A21;&#x5F0F;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.4"
+                  data-path="../ch4/Navigation.html"
+                >
+                  <a href="../ch4/Navigation.html">
+                    &#x81EA;&#x52D5;&#x5C0B;&#x8DEF;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.5"
+                  data-path="../ch4/Controller.html"
+                >
+                  <a href="../ch4/Controller.html">
+                    &#x624B;&#x628A;&#x8A2D;&#x7F6E;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.6"
+                  data-path="../ch4/ProjectManagement.html"
+                >
+                  <a href="../ch4/ProjectManagement.html">
+                    &#x5C08;&#x6848;&#x63A7;&#x7BA1;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.7"
+                  data-path="../ch4/OOP.html"
+                >
+                  <a href="../ch4/OOP.html">
+                    &#x7269;&#x4EF6;&#x5C0E;&#x5411;
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="divider"></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="book-body">
+        <div class="body-inner">
+          <div class="page-wrapper" tabindex="-1" role="main">
+            <div class="page-inner">
+              <div id="book-search-results">
+                <div class="search-noresults">
+                  <section class="normal markdown-section">
+                    <h1 id="&#x904A;&#x6232;&#x7269;&#x4EF6;">
+                      &#x904A;&#x6232;&#x7269;&#x4EF6;
+                    </h1>
+                    <ul>
+                      <li>Scene - &#x5834;&#x666F;</li>
+                      <li>
+                        Sprite - 2D&#x5716;&#x7247;
+                        (&#x53EF;&#x4EE5;&#x662F;&#x55AE;&#x5F35;,&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x591A;&#x5F35;&#x9023;&#x7E8C;&#x52D5;&#x756B;)
+                      </li>
+                      <li>
+                        Script - &#x8173;&#x672C;
+                        (Unity&#x652F;&#x63F4;UnityScript,
+                        C#&#x5169;&#x7A2E;&#x8A9E;&#x8A00;)
+                      </li>
+                      <li>Prefab - &#x9810;&#x88FD;&#x7269;&#x4EF6;</li>
+                      <li>
+                        Animator Controller, Animation Clip -
+                        &#x52D5;&#x756B;&#x63A7;&#x5236;&#x5668;,
+                        &#x52D5;&#x756B;&#x7247;&#x6BB5;
+                      </li>
+                      <li>OTF, TTF - &#x5B57;&#x5F62;&#x6A94;</li>
+                      <li>
+                        MP3, WAV -
+                        &#x97F3;&#x6A02;&#x3001;&#x97F3;&#x6548;&#x6A94;
+                      </li>
+                    </ul>
+                    <h2 id="sprite-2d&#x5716;&#x7247;">
+                      Sprite 2D&#x5716;&#x7247;
+                    </h2>
+                    <p>2D&#x5716;&#x7247;&#x683C;&#x5F0F;&#x3002;</p>
+                    <ul>
+                      <li>Texture Mode - Sprite (2D and UI)</li>
+                      <li>
+                        Sprite Mode - Single, Multiple
+                        (&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x5F35;&#x5716;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;spritesheet&#x52D5;&#x614B;&#x5716;)
+                      </li>
+                    </ul>
+                    <h2 id="prefab-&#x9810;&#x88FD;&#x7269;&#x4EF6;">
+                      Prefab &#x9810;&#x88FD;&#x7269;&#x4EF6;
+                    </h2>
+                    <p>
+                      &#x5F9E;Prefab&#x62D6;&#x66F3;&#x81F3;Hierarchy&#x7684;&#x7686;&#x70BA;&#x5176;&#x5B50;&#x7269;&#x4EF6;&#xFF0C;&#x5B50;&#x7269;&#x4EF6;&#x7684;&#x8B8A;&#x66F4;&#x4E0D;&#x6703;&#x5F71;&#x97FF;&#x5230;&#x7236;&#x7269;&#x4EF6;&#x4E5F;&#x5C31;&#x662F;Prefab&#x672C;&#x8EAB;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x8B8A;&#x66F4;Prefab&#x7684;&#x5C6C;&#x6027;&#x6216;&#x8A2D;&#x5B9A;&#x7686;&#x6703;&#x5F71;&#x97FF;&#x5230;&#x5176;&#x5B50;&#x7269;&#x4EF6;&#x5011;&#x3002;
+                    </p>
+                    <h2
+                      id="animator-controller-&#x52D5;&#x756B;&#x63A7;&#x5236;&#x5668;"
+                    >
+                      Animator Controller
+                      &#x52D5;&#x756B;&#x63A7;&#x5236;&#x5668;
+                    </h2>
+                    <p>
+                      &#x4EE5;&#x72C0;&#x614B;&#x6A5F;(State
+                      Machine)&#x7684;&#x65B9;&#x5F0F;&#x63A7;&#x5236;&#x6BCF;&#x500B;&#x52D5;&#x756B;&#x7247;&#x6BB5;&#xFF0C;&#x4E26;&#x6839;&#x64DA;&#x53C3;&#x6578;(Parameters)&#x7684;&#x6539;&#x8B8A;&#x9032;&#x884C;&#x52D5;&#x756B;&#x7684;&#x5207;&#x63DB;&#xFF0C;&#x540C;&#x6642;&#x4EA6;&#x53EF;&#x64AD;&#x653E;&#x5169;&#x5C64;(Layers)&#x4EE5;&#x4E0A;&#x4E0D;&#x7B49;&#x7684;&#x52D5;&#x756B;&#x7247;&#x6BB5;&#x3002;
+                    </p>
+                    <h2 id="animation-clip-&#x52D5;&#x756B;&#x7247;&#x6BB5;">
+                      Animation Clip &#x52D5;&#x756B;&#x7247;&#x6BB5;
+                    </h2>
+                    <p>
+                      &#x5305;&#x542B;&#x6BCF;&#x500B;&#x5F71;&#x683C;&#x4E2D;&#x7684;&#x5143;&#x4EF6;&#x6240;&#x5448;&#x73FE;&#x7684;&#x5C6C;&#x6027;&#x8B8A;&#x5316;&#x7B49;&#x7B49;&#x6578;&#x503C;&#xFF0C;&#x4E5F;&#x540C;&#x6642;&#x53EF;&#x4EE5;&#x5728;&#x5F71;&#x683C;&#x7576;&#x4E2D;&#x63D2;&#x5165;&#x52D5;&#x756B;&#x4E8B;&#x4EF6;(Animation
+                      Event)&#x547C;&#x53EB;&#x8173;&#x672C;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x3002;
+                    </p>
+                    <ul>
+                      <li>Loop Time - &#x5FAA;&#x74B0;&#x64AD;&#x653E;</li>
+                    </ul>
+                    <p>
+                      <strong
+                        >&#x70BA;&#x4EC0;&#x9EBC;&#x5728;&#x65B0;&#x589E;&#x52D5;&#x756B;&#x4E4B;&#x5F8C;&#x89D2;&#x8272;&#x5C31;&#x7A81;&#x7136;&#x7121;&#x6CD5;&#x64CD;&#x63A7;&#x4E86;&#x5462;&#xFF1F;&#x672A;&#x52A0;&#x5165;&#x52D5;&#x756B;&#x4E4B;&#x524D;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#x3002;</strong
+                      >
+                    </p>
+                    <blockquote>
+                      <p>
+                        &#x56E0;&#x70BA;&#x904A;&#x6232;&#x7269;&#x4EF6;&#x7B2C;&#x4E00;&#x6B21;&#x65B0;&#x589E;&#x52D5;&#x756B;&#x6642;&#x6703;&#x76F4;&#x63A5;&#x5C07;&#x8A72;&#x7247;&#x6BB5;&#x8A2D;&#x70BA;&#x9810;&#x8A2D;&#x503C;&#xFF0C;&#x56E0;&#x6B64;&#x4E00;&#x958B;&#x59CB;&#x5C31;&#x6703;&#x64AD;&#x653E;&#xFF0C;&#x518D;&#x52A0;&#x4E0A;&#x5728;&#x88FD;&#x4F5C;&#x7684;&#x904E;&#x7A0B;&#x7576;&#x4E2D;&#x5982;&#x679C;&#x6709;&#x52D5;&#x5230;position&#xFF0C;&#x5C31;&#x6703;&#x5C0E;&#x81F4;&#x9019;&#x6A23;&#x7684;&#x60C5;&#x6CC1;&#x767C;&#x751F;&#xFF0C;&#x89E3;&#x6C7A;&#x65B9;&#x5F0F;&#x662F;&#x5C07;&#x7247;&#x6BB5;&#x4E2D;&#x7684;position
+                        property&#x79FB;&#x9664;&#x5373;&#x53EF;&#x3002;
+                      </p>
+                    </blockquote>
+                    <p>
+                      <strong
+                        >&#x70BA;&#x4EC0;&#x9EBC;3D&#x6A21;&#x578B;&#x7684;&#x52D5;&#x756B;&#x7247;&#x6BB5;&#x7121;&#x6CD5;&#x7DE8;&#x8F2F;&#xFF1F;&#x5982;&#x679C;&#x9700;&#x8981;&#x547C;&#x53EB;&#x8173;&#x672C;&#x65B9;&#x6CD5;&#x8A72;&#x600E;&#x9EBC;&#x8FA6;&#xFF1F;</strong
+                      >
+                    </p>
+                    <blockquote>
+                      <p>
+                        &#x5C07;&#x8A72;&#x6A21;&#x578B;&#x52D5;&#x756B;&#x63A7;&#x5236;&#x5668;&#x4E2D;&#x6BCF;&#x500B;&#x72C0;&#x614B;(State)&#x7684;&#x52D5;&#x756B;&#x7247;&#x6BB5;(Anim)&#x6A94;&#x5168;&#x90E8;&#x8907;&#x88FD;&#x4E00;&#x4EFD;&#xFF0C;&#x7136;&#x5F8C;&#x91CD;&#x65B0;&#x7D81;&#x56DE;&#x5404;&#x81EA;&#x7684;&#x72C0;&#x614B;&#x4E0A;&#xFF0C;&#x53D6;&#x4EE3;&#x539F;&#x672C;&#x7684;&#x52D5;&#x756B;&#x7247;&#x6BB5;&#xFF0C;&#x5982;&#x6B64;&#x4E00;&#x4F86;&#x4FBF;&#x53EF;&#x4EE5;&#x9032;&#x884C;&#x7DE8;&#x8F2F;&#x4E86;&#x3002;
+                      </p>
+                      <p>
+                        Ref:
+                        <a
+                          href="http://answers.unity3d.com/questions/187907/how-to-add-keyframes-on-imported-read-only-animati.html"
+                          target="_blank"
+                          >how-to-add-keyframes-on-imported-read-only-animation</a
+                        >
+                      </p>
+                    </blockquote>
+                    <h2 id="animation-event-&#x52D5;&#x756B;&#x4E8B;&#x4EF6;">
+                      Animation Event &#x52D5;&#x756B;&#x4E8B;&#x4EF6;
+                    </h2>
+                    <ol>
+                      <li>
+                        &#x5728;&#x5F71;&#x683C;&#x4E0A;&#x9EDE;&#x53F3;&#x9375;
+                      </li>
+                      <li>Add Animation Event</li>
+                      <li>
+                        &#x9078;&#x64C7;&#x8981;&#x57F7;&#x884C;&#x7684;function
+                        (&#x8A3B;:&#x8A72;&#x8173;&#x672C;&#x5FC5;&#x9808;&#x7D81;&#x5B9A;&#x5728;&#x8207;Animator&#x540C;&#x4E00;&#x5C64;)
+                      </li>
+                    </ol>
+                    <h2 id="parameters-&#x52D5;&#x756B;&#x53C3;&#x6578;">
+                      Parameters &#x52D5;&#x756B;&#x53C3;&#x6578;
+                    </h2>
+                    <p>
+                      &#x6709;Float, Int, Bool,
+                      Trigger&#x56DB;&#x7A2E;&#x578B;&#x614B;&#xFF0C;&#x5176;&#x4E2D;Bool&#x8F03;&#x5E38;&#x7528;&#x5728;&#x6301;&#x7E8C;&#x6027;&#x7684;&#x52D5;&#x4F5C;&#xFF0C;&#x50CF;&#x958B;&#x95DC;&#x71C8;&#x4E00;&#x6A23;&#xFF0C;&#x958B;&#x4E86;&#x4E4B;&#x5F8C;&#x4F60;&#x6C92;&#x6709;&#x95DC;&#x5C31;&#x6703;&#x4E00;&#x76F4;&#x4EAE;&#xFF0C;&#x800C;Trigger&#x5247;&#x5E38;&#x7528;&#x5728;&#x4E00;&#x6B21;&#x6027;&#x7684;&#x52D5;&#x4F5C;&#xFF0C;&#x50CF;&#x662F;&#x70B8;&#x5F48;&#x6309;&#x9215;&#x4E00;&#x6A23;&#xFF0C;&#x4E00;&#x6309;&#x4E0B;&#x5C31;&#x7206;&#x70B8;&#x3002;
+                    </p>
+                    <pre><code class="lang-js"><span class="hljs-comment">// &#x9808;&#x5148;&#x53D6;&#x5F97;&#x5143;&#x4EF6;&#x672C;&#x8EAB;&#x624D;&#x80FD;&#x8B8A;&#x66F4;&#x52D5;&#x756B;&#x53C3;&#x6578;</span>
+<span class="hljs-keyword">var</span> anim : Animator = GetComponent(Animator);
+<span class="hljs-comment">// &#x4E8B;&#x4EF6;&#x767C;&#x751F;&#x6642;&#x76F4;&#x63A5;&#x555F;&#x52D5;</span>
+anim.SetTrigger(<span class="hljs-string">&quot;Explode&quot;</span>);
+</code></pre>
+                    <h2
+                      id="mp3-wav-&#x97F3;&#x6A02;&#x3001;&#x97F3;&#x6548;&#x6A94;-audioclip"
+                    >
+                      MP3, WAV &#x97F3;&#x6A02;&#x3001;&#x97F3;&#x6548;&#x6A94;
+                      (=AudioClip)
+                    </h2>
+                    <p>
+                      &#x53EF;&#x7528;&#x62D6;&#x66F3;&#x7684;&#x65B9;&#x5F0F;&#x76F4;&#x63A5;&#x5C07;&#x6A94;&#x6848;&#x532F;&#x5165;&#x3002;
+                    </p>
+                  </section>
+                </div>
+                <div class="search-results">
+                  <div class="has-results">
+                    <h1 class="search-results-title">
+                      <span class="search-results-count"></span> results
+                      matching &quot;<span class="search-query"></span>&quot;
+                    </h1>
+                    <ul class="search-results-list"></ul>
+                  </div>
+                  <div class="no-results">
+                    <h1 class="search-results-title">
+                      No results matching &quot;<span
+                        class="search-query"
+                      ></span
+                      >&quot;
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="Outline.html"
+          class="navigation navigation-prev"
+          aria-label="Previous page: &#x958B;&#x767C;&#x7DB1;&#x8981;"
+        >
+          <i class="fa fa-angle-left"></i>
+        </a>
+
+        <a
+          href="Tips.html"
+          class="navigation navigation-next"
+          aria-label="Next page: &#x8A23;&#x7AC5;&#x6280;&#x5DE7;"
+        >
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
+
+      <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+          gitbook.page.hasChanged({
+            page: {
+              title: "遊戲物件",
+              level: "1.2.4",
+              depth: 2,
+              next: {
+                title: "訣竅技巧",
+                level: "1.2.5",
+                depth: 2,
+                path: "ch1/Tips.md",
+                ref: "ch1/Tips.md",
+                articles: [],
+              },
+              previous: {
+                title: "開發綱要",
+                level: "1.2.3",
+                depth: 2,
+                path: "ch1/Outline.md",
+                ref: "ch1/Outline.md",
+                articles: [],
+              },
+              dir: "ltr",
+            },
+            config: {
+              plugins: ["comment"],
+              styles: {
+                website: "styles/website.css",
+                pdf: "styles/pdf.css",
+                epub: "styles/epub.css",
+                mobi: "styles/mobi.css",
+                ebook: "styles/ebook.css",
+                print: "styles/print.css",
+              },
+              pluginsConfig: {
+                comment: { highlightCommented: true },
+                highlight: {},
+                search: {},
+                lunr: { maxIndexSize: 1000000, ignoreSpecialCharacters: false },
+                sharing: {
+                  facebook: true,
+                  twitter: true,
+                  google: false,
+                  weibo: false,
+                  instapaper: false,
+                  vk: false,
+                  all: ["facebook", "google", "twitter", "weibo", "instapaper"],
+                },
+                fontsettings: { theme: "white", family: "sans", size: 2 },
+                "theme-default": {
+                  styles: {
+                    website: "styles/website.css",
+                    pdf: "styles/pdf.css",
+                    epub: "styles/epub.css",
+                    mobi: "styles/mobi.css",
+                    ebook: "styles/ebook.css",
+                    print: "styles/print.css",
+                  },
+                  showLevel: false,
+                },
+              },
+              theme: "default",
+              author: "tonypai",
+              pdf: {
+                pageNumbers: true,
+                fontSize: 16,
+                fontFamily: "Arial",
+                paperSize: "a4",
+                chapterMark: "pagebreak",
+                pageBreaksBefore: "/",
+                margin: { right: 62, left: 62, top: 56, bottom: 56 },
+              },
+              structure: {
+                langs: "LANGS.md",
+                readme: "README.md",
+                glossary: "GLOSSARY.md",
+                summary: "SUMMARY.md",
+              },
+              variables: {},
+              title: "Unity Tutorial Note",
+              language: "zh",
+              links: {
+                sidebar: {
+                  "Unity Tutorial Note":
+                    "https://www.gitbook.com/book/tpai/unity-tutorial-note",
+                },
+                gitbook: true,
+              },
+              gitbook: "*",
+              description:
+                "本書為Unity教學課程的筆記，主要內容圍繞著課堂專案所使用到的語法、操作以及技巧為主，供同學複習以及交流。",
+            },
+            file: {
+              path: "ch1/Gameobject.md",
+              mtime: "2017-04-18T05:49:33.000Z",
+              type: "markdown",
+            },
+            gitbook: { version: "3.2.2", time: "2017-04-18T05:49:45.242Z" },
+            basePath: "..",
+            book: { language: "" },
+          });
+        });
+      </script>
+    </div>
+
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-comment/plugin.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+  </body>
+</html>

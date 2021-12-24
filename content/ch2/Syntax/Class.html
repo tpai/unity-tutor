@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Unity Tutorial Note</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content />
+    <meta name="generator" content="GitBook 3.2.2" />
+    <meta name="author" content="tonypai" />
+
+    <link rel="stylesheet" href="../gitbook/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="../gitbook/gitbook-plugin-comment/plugin.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../gitbook/gitbook-plugin-highlight/website.css"
+    />
+
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css" />
+
+    <link
+      rel="stylesheet"
+      href="../gitbook/gitbook-plugin-fontsettings/website.css"
+    />
+
+    <meta name="HandheldFriendly" content="true" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="152x152"
+      href="gitbook/images/apple-touch-icon-precomposed-152.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://gstatic.gitbook.com/images/b1c4c86ca817a71628d2debe73be9a64.ico"
+      type="image/x-icon"
+    />
+
+    <link rel="next" href="Else.html" />
+
+    <link rel="prev" href="Components.html" />
+
+    <style>
+      .book .book-summary .book-search,
+      .book .book-summary ul.summary {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+      }
+      .book-summary {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        overflow-y: auto;
+      }
+      .book-summary > nav {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        overflow-y: overlay;
+      }
+      .gl-wrapper {
+        margin: 0;
+        display: block;
+        padding: 0;
+        position: relative;
+        line-height: 15px;
+        background: #fafafa;
+      }
+      .gl-wrapper:before {
+        background: -webkit-linear-gradient(
+          to bottom,
+          rgba(250, 250, 250, 0) 0%,
+          #fafafa 100%
+        );
+        background: -moz-linear-gradient(
+          to bottom,
+          rgba(250, 250, 250, 0) 0%,
+          #fafafa 100%
+        );
+        top: -24px;
+        width: 100%;
+        height: 24px;
+        content: "";
+        display: block;
+        position: absolute;
+        background: linear-gradient(
+          to bottom,
+          rgba(250, 250, 250, 0) 0%,
+          #fafafa 100%
+        );
+      }
+      .book.color-theme-1 .gl-wrapper {
+        background: #121212;
+      }
+      .book.color-theme-1 .gl-wrapper:before {
+        background: -webkit-linear-gradient(
+          to bottom,
+          rgba(18, 18, 18, 0) 0%,
+          #121212 100%
+        );
+        background: -moz-linear-gradient(
+          to bottom,
+          rgba(18, 18, 18, 0) 0%,
+          #121212 100%
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba(18, 18, 18, 0) 0%,
+          #121212 100%
+        );
+      }
+      .book.color-theme-2 .gl-wrapper {
+        background: #2e3243;
+      }
+      .book.color-theme-2 .gl-wrapper:before {
+        background: -webkit-linear-gradient(
+          to bottom,
+          rgba(46, 50, 67, 0) 0%,
+          #2e3243 100%
+        );
+        background: -moz-linear-gradient(
+          to bottom,
+          rgba(46, 50, 67, 0) 0%,
+          #2e3243 100%
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba(46, 50, 67, 0) 0%,
+          #2e3243 100%
+        );
+      }
+      .gl-wrapper .gitbook-link {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        color: #9daab6;
+        margin: 16px;
+        display: flex;
+        padding: 0;
+        align-items: center;
+        margin-left: 32px;
+        padding-top: 8px;
+        padding-left: 16px;
+        border-radius: 3px;
+        padding-right: 16px;
+        padding-bottom: 8px;
+        text-decoration: none;
+        background-color: #e6ecf1;
+        -webkit-box-align: center;
+      }
+      .gl-wrapper .tm-logo {
+        margin: 0;
+        display: block;
+        padding: 0;
+        font-size: 40px;
+      }
+      .gl-wrapper .tm-content {
+        flex: 1;
+        margin: 0;
+        display: block;
+        padding: 0;
+        padding-left: 16px;
+      }
+      .gl-wrapper .tm-content .container {
+        margin: 0;
+        display: block;
+        padding: 0;
+      }
+      .gl-wrapper .tm-content .tm-container .tm-text {
+        font-size: 12px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        line-height: 1.625;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="book">
+      <div class="book-summary">
+        <nav role="navigation">
+          <ul class="summary">
+            <li>
+              <a href="#" class="custom-link">Unity Tutorial Note</a>
+            </li>
+
+            <li class="divider"></li>
+
+            <li class="chapter" data-level="1.1" data-path="../../">
+              <a href="../../"> &#x7C21;&#x4ECB; </a>
+            </li>
+
+            <li
+              class="chapter"
+              data-level="1.2"
+              data-path="../../xin-shou-shang-lu.html"
+            >
+              <a href="../../xin-shou-shang-lu.html">
+                &#x65B0;&#x624B;&#x4E0A;&#x8DEF;
+              </a>
+
+              <ul class="articles">
+                <li
+                  class="chapter"
+                  data-level="1.2.1"
+                  data-path="../../ch1/Preparation.html"
+                >
+                  <a href="../../ch1/Preparation.html">
+                    &#x524D;&#x7F6E;&#x4F5C;&#x696D;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.2.2"
+                  data-path="../../ch1/Interface.html"
+                >
+                  <a href="../../ch1/Interface.html">
+                    &#x5E38;&#x7528;&#x4ECB;&#x9762;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.2.3"
+                  data-path="../../ch1/Outline.html"
+                >
+                  <a href="../../ch1/Outline.html">
+                    &#x958B;&#x767C;&#x7DB1;&#x8981;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.2.4"
+                  data-path="../../ch1/Gameobject.html"
+                >
+                  <a href="../../ch1/Gameobject.html">
+                    &#x904A;&#x6232;&#x7269;&#x4EF6;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.2.5"
+                  data-path="../../ch1/Tips.html"
+                >
+                  <a href="../../ch1/Tips.html">
+                    &#x8A23;&#x7AC5;&#x6280;&#x5DE7;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.2.6"
+                  data-path="../../ch1/QA.html"
+                >
+                  <a href="../../ch1/QA.html">
+                    &#x7591;&#x96E3;&#x96DC;&#x75C7;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.2.7"
+                  data-path="../../ch1/Deployment.html"
+                >
+                  <a href="../../ch1/Deployment.html">
+                    &#x7DE8;&#x8B6F;&#x90E8;&#x7F72;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.2.8"
+                  data-path="../../ch1/FreeAssets.html"
+                >
+                  <a href="../../ch1/FreeAssets.html">
+                    &#x514D;&#x8CBB;&#x7D20;&#x6750;
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="chapter" data-level="1.3">
+              <span> &#x8173;&#x672C;&#x8A9E;&#x6CD5; </span>
+
+              <ul class="articles">
+                <li class="chapter" data-level="1.3.1">
+                  <span> &#x8A9E;&#x6CD5;&#x4ECB;&#x7D39; </span>
+
+                  <ul class="articles">
+                    <li
+                      class="chapter"
+                      data-level="1.3.1.1"
+                      data-path="Components.html"
+                    >
+                      <a href="Components.html"> &#x5143;&#x4EF6; </a>
+                    </li>
+
+                    <li
+                      class="chapter active"
+                      data-level="1.3.1.2"
+                      data-path="Class.html"
+                    >
+                      <a href="Class.html"> &#x985E;&#x5225; </a>
+                    </li>
+
+                    <li
+                      class="chapter"
+                      data-level="1.3.1.3"
+                      data-path="Else.html"
+                    >
+                      <a href="Else.html"> &#x5176;&#x4ED6; </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.3.2"
+                  data-path="../ScriptLifecycle.html"
+                >
+                  <a href="../ScriptLifecycle.html">
+                    &#x4E8B;&#x4EF6;&#x9031;&#x671F;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.3.3"
+                  data-path="../UsefulScripts.html"
+                >
+                  <a href="../UsefulScripts.html">
+                    &#x597D;&#x7528;&#x8173;&#x672C;
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="chapter" data-level="1.4">
+              <span> &#x9032;&#x968E;&#x6574;&#x5408; </span>
+
+              <ul class="articles">
+                <li class="chapter" data-level="1.4.1">
+                  <span> &#x904A;&#x6232;&#x670D;&#x52D9; </span>
+
+                  <ul class="articles">
+                    <li
+                      class="chapter"
+                      data-level="1.4.1.1"
+                      data-path="../../ch3/GoogleGameService.html"
+                    >
+                      <a href="../../ch3/GoogleGameService.html">
+                        Google Game Service
+                      </a>
+                    </li>
+
+                    <li
+                      class="chapter"
+                      data-level="1.4.1.2"
+                      data-path="../../ch3/FacebookSDK.html"
+                    >
+                      <a href="../../ch3/FacebookSDK.html"> Facebook SDK </a>
+                    </li>
+
+                    <li
+                      class="chapter"
+                      data-level="1.4.1.3"
+                      data-path="../../ch3/GameJoltSDK.html"
+                    >
+                      <a href="../../ch3/GameJoltSDK.html"> GameJolt SDK </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.4.2"
+                  data-path="../../ch3/InAppPurchase.html"
+                >
+                  <a href="../../ch3/InAppPurchase.html">
+                    &#x5167;&#x8CFC;&#x6D88;&#x8CBB;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.4.3"
+                  data-path="../../ch3/Advertisement.html"
+                >
+                  <a href="../../ch3/Advertisement.html">
+                    &#x7F6E;&#x5165;&#x5EE3;&#x544A;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.4.4"
+                  data-path="../../ch3/ApplePushNotificationService.html"
+                >
+                  <a href="../../ch3/ApplePushNotificationService.html">
+                    &#x8A0A;&#x606F;&#x63A8;&#x64AD;
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="chapter" data-level="1.5">
+              <span> &#x958B;&#x767C;&#x96DC;&#x8A18; </span>
+
+              <ul class="articles">
+                <li
+                  class="chapter"
+                  data-level="1.5.1"
+                  data-path="../../ch4/OptimizePerformance.html"
+                >
+                  <a href="../../ch4/OptimizePerformance.html">
+                    &#x512A;&#x5316;&#x6280;&#x5DE7;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.2"
+                  data-path="../../ch4/DifferenciesBetweenUnityscriptAndCsharp.html"
+                >
+                  <a
+                    href="../../ch4/DifferenciesBetweenUnityscriptAndCsharp.html"
+                  >
+                    &#x8A9E;&#x8A00;&#x5DEE;&#x7570;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.3"
+                  data-path="../../ch4/DesignPattern.html"
+                >
+                  <a href="../../ch4/DesignPattern.html">
+                    &#x8A2D;&#x8A08;&#x6A21;&#x5F0F;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.4"
+                  data-path="../../ch4/Navigation.html"
+                >
+                  <a href="../../ch4/Navigation.html">
+                    &#x81EA;&#x52D5;&#x5C0B;&#x8DEF;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.5"
+                  data-path="../../ch4/Controller.html"
+                >
+                  <a href="../../ch4/Controller.html">
+                    &#x624B;&#x628A;&#x8A2D;&#x7F6E;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.6"
+                  data-path="../../ch4/ProjectManagement.html"
+                >
+                  <a href="../../ch4/ProjectManagement.html">
+                    &#x5C08;&#x6848;&#x63A7;&#x7BA1;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.7"
+                  data-path="../../ch4/OOP.html"
+                >
+                  <a href="../../ch4/OOP.html">
+                    &#x7269;&#x4EF6;&#x5C0E;&#x5411;
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="divider"></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="book-body">
+        <div class="body-inner">
+          <div class="page-wrapper" tabindex="-1" role="main">
+            <div class="page-inner">
+              <div id="book-search-results">
+                <div class="search-noresults">
+                  <section class="normal markdown-section">
+                    <h2 id="gameobject">GameObject</h2>
+                    <p>
+                      Unity&#x4E2D;&#x7684;&#x6700;&#x57FA;&#x672C;&#x69CB;&#x6210;&#x2212;&#x904A;&#x6232;&#x7269;&#x4EF6;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp"><span class="hljs-comment">// &#x53D6;&#x5F97;&#x5728;Hierachy&#x4E2D;&#x540D;&#x7A31;&#x53EB;Enemy&#x7684;&#x7269;&#x4EF6;</span>
+GameObject enemy = GameObject.Find(<span class="hljs-string">&quot;Enemy&quot;</span>);
+</code></pre>
+                    <h3 id="getcomponent">GetComponent()</h3>
+                    <p>
+                      &#x53D6;&#x5F97;&#x904A;&#x6232;&#x7269;&#x4EF6;&#x5E95;&#x4E0B;&#x7684;&#x5143;&#x4EF6;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp"><span class="hljs-comment">// &#x53D6;&#x5F97;&#x904A;&#x6232;&#x7269;&#x4EF6;&#x8EAB;&#x4E0A;&#x7684;Animator&#x5143;&#x4EF6;&#xFF0C;&#x4E26;&#x628A;&#x5B83;&#x653E;&#x5230;anim&#x8B8A;&#x6578;&#x5BB9;&#x5668;&#x4E2D;&#x3002;</span>
+Animator anim = GetComponent&lt;Animator&gt;();
+<span class="hljs-comment">// &#x53D6;&#x5F97;&#x904A;&#x6232;&#x7269;&#x4EF6;&#x8EAB;&#x4E0A;&#x7684;BoxCollider2D&#x5143;&#x4EF6;&#xFF0C;&#x4E26;&#x628A;&#x5B83;&#x653E;&#x5230;box&#x8B8A;&#x6578;&#x5BB9;&#x5668;&#x4E2D;&#x3002;</span>
+BoxCollider2D box = GetComponent&lt;BoxCollider2D&gt;();
+<span class="hljs-comment">// &#x505C;&#x7528;&#x8A72;&#x5143;&#x4EF6;</span>
+box.enabled = <span class="hljs-keyword">false</span>;
+</code></pre>
+                    <h3 id="instantiate">Instantiate()</h3>
+                    <p>
+                      &#x7528;&#x65BC;&#x751F;&#x6210;&#x7269;&#x4EF6;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp">GameObject prefab;
+Vector3 position = Vector3.zero;
+Quaternion rotation = Quaternion.identity;
+<span class="hljs-comment">// &#x751F;&#x6210;&#x4E00;&#x500B;&#x7269;&#x4EF6;&#x5728;&#x539F;&#x9EDE;&#x4E14;&#x89D2;&#x5EA6;&#x6C92;&#x6709;&#x4EFB;&#x4F55;&#x8B8A;&#x52D5;&#x3002;</span>
+Instantiate(prefab, position, rotation);
+</code></pre>
+                    <h3 id="sendmessage">SendMessage()</h3>
+                    <p>
+                      &#x547C;&#x53EB;&#x6307;&#x5B9A;&#x7269;&#x4EF6;&#x4E0A;&#x8173;&#x672C;&#x4E2D;&#x4EFB;&#x4F55;&#x4E00;&#x500B;&#x7B26;&#x5408;&#x7279;&#x5B9A;&#x5B57;&#x4E32;&#x7684;&#x65B9;&#x6CD5;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp"><span class="hljs-comment">// &#x547C;&#x53EB;&#x81EA;&#x8EAB;&#x7269;&#x4EF6;&#x4E0A;&#x8173;&#x672C;&#x4E2D;&#x4EFB;&#x4E00;&#x53EB;&#x505A;Walk&#x7684;&#x65B9;&#x6CD5;</span>
+gameObject.SendMessage(<span class="hljs-string">&quot;Walk&quot;</span>);
+<span class="hljs-comment">// &#x547C;&#x53EB;Enemy&#x7269;&#x4EF6;&#x4E0A;&#x8173;&#x672C;&#x4E2D;&#x4EFB;&#x4E00;&#x53EB;&#x505A;Die&#x7684;&#x65B9;&#x6CD5;</span>
+GameObject.Find(<span class="hljs-string">&quot;Enemy&quot;</span>).SendMessage(<span class="hljs-string">&quot;Die&quot;</span>);
+</code></pre>
+                    <h3 id="dontdestroyonload">DontDestroyOnLoad()</h3>
+                    <p>
+                      &#x8B93;&#x76EE;&#x6A19;&#x7269;&#x4EF6;&#x5728;&#x65B0;&#x5834;&#x666F;&#x4E0D;&#x6703;&#x81EA;&#x52D5;&#x88AB;&#x6E05;&#x9664;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp">DontDestroyOnLoad(transform.gameObject);
+</code></pre>
+                    <h3 id="destroy">Destroy()</h3>
+                    <p>
+                      &#x5F9E;Hierarchy&#x4E2D;&#x79FB;&#x9664;&#x904A;&#x6232;&#x7269;&#x4EF6;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp">Destroy(gameObject); <span class="hljs-comment">// &#x5C07;&#x7D81;&#x5B9A;&#x6B64;&#x8173;&#x672C;&#x7684;&#x904A;&#x6232;&#x7269;&#x4EF6;&#x79FB;&#x9664;</span>
+</code></pre>
+                    <h2 id="debug">Debug</h2>
+                    <h3 id="log">.Log()</h3>
+                    <p>
+                      &#x5728;console&#x7A97;&#x683C;&#x5370;&#x51FA;&#x8A0A;&#x606F;
+                    </p>
+                    <pre><code class="lang-csharp">Debug.Log(<span class="hljs-string">&quot;Hello Indie Game! XD&quot;</span>);
+</code></pre>
+                    <h3 id="drawray">.DrawRay()</h3>
+                    <p>
+                      &#x5F9E;&#x7269;&#x4EF6;&#x672C;&#x8EAB;&#x51FA;&#x767C;&#x5F80;(0,
+                      0,
+                      1)&#x65B9;&#x5411;&#x7E6A;&#x88FD;&#x51FA;&#x4E00;&#x689D;&#x9577;10&#x55AE;&#x4F4D;&#x7684;&#x5C04;&#x7DDA;
+                    </p>
+                    <pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span> (<span class="hljs-params"></span>) </span>{
+    Debug.DrawRay (transform.position, Vector3.forward, <span class="hljs-number">10</span>, Color.green);
+}
+</code></pre>
+                    <blockquote>
+                      <p>
+                        Ref:
+                        <a
+                          href="http://answers.unity3d.com/questions/22744/debugdrawray-cant-get-it-to-work.html"
+                          target="_blank"
+                          >stackoverflow</a
+                        >
+                      </p>
+                    </blockquote>
+                    <h2 id="input">Input</h2>
+                    <p>
+                      Input&#x985E;&#x5225;&#x638C;&#x7BA1;&#x6240;&#x6709;&#x8F38;&#x5165;&#x884C;&#x70BA;&#xFF0C;&#x5305;&#x62EC;&#x89F8;&#x63A7;&#x3001;&#x6ED1;&#x9F20;&#x3001;&#x9375;&#x76E4;&#x4EE5;&#x53CA;&#x6416;&#x687F;&#x7B49;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp">Input.GetKey(KeyCode.UpArrow) <span class="hljs-comment">// &#x7576;&#x6309;&#x4E0B;&#x5341;&#x5B57;&#x9375;&#x4E0A;&#x6642;&#x6703;&#x56DE;&#x50B3;true &#x53CD;&#x4E4B;&#x5247;false</span>
+</code></pre>
+                    <h2 id="time">Time</h2>
+                    <p>
+                      Time&#x985E;&#x5225;&#x7BA1;&#x7406;&#x6240;&#x6709;&#x6642;&#x9593;&#x76F8;&#x95DC;&#x7684;&#x8CC7;&#x8A0A;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp"><span class="hljs-keyword">float</span> timeLeft = <span class="hljs-number">30</span>f;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span> (<span class="hljs-params"></span>) 
+    <span class="hljs-comment">// &#x6E1B;&#x53BB;&#x6BCF;&#x500B;&#x5F71;&#x683C;&#x6240;&#x82B1;&#x8CBB;&#x7684;&#x6642;&#x9593;</span>
+    timeLeft -</span>= Time.deltaTime;
+}
+</code></pre>
+                    <h2 id="mathf">Mathf</h2>
+                    <p>
+                      Mathf&#x985E;&#x5225;&#x53EF;&#x53D6;&#x7528;&#x5167;&#x5EFA;&#x7684;&#x8A31;&#x591A;&#x6578;&#x5B78;&#x76F8;&#x95DC;&#x51FD;&#x5F0F;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp">Debug.Log(Mathf.RoundToInt(<span class="hljs-number">4.5</span>)); <span class="hljs-comment">// &#x56DB;&#x6368;&#x4E94;&#x5165;&#x8F38;&#x51FA;5</span>
+Debug.Log(Mathf.Cos((Mathf.PI / <span class="hljs-number">180</span>) * <span class="hljs-number">90</span>)); <span class="hljs-comment">// cos90&#xB0;</span>
+</code></pre>
+                    <h2 id="random">Random</h2>
+                    <p>
+                      &#x88AB;&#x7528;&#x4F86;&#x7522;&#x751F;&#x96A8;&#x6A5F;&#x8CC7;&#x6599;&#x7684;&#x985E;&#x5225;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp"><span class="hljs-comment">// &#x96A8;&#x6A5F;&#x7522;&#x751F;0-99&#x7684;&#x6574;&#x6578; (&#x4E0D;&#x5305;&#x542B;100)</span>
+Debug.Log(Random.Range(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>));
+<span class="hljs-comment">// &#x96A8;&#x6A5F;&#x7522;&#x751F;(0.0-100.0&#x4E4B;&#x9593;&#x7684;&#x6D6E;&#x9EDE;&#x6578;)</span>
+Debug.Log(Random.Range(<span class="hljs-number">0.0</span>f, <span class="hljs-number">100.0</span>f));
+</code></pre>
+                    <h2 id="quaternion">Quaternion</h2>
+                    <p>
+                      &#x88AB;&#x7528;&#x4F86;&#x4EE3;&#x8868;&#x65CB;&#x8F49;&#x89D2;&#x5EA6;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp"><span class="hljs-comment">// &#x6C92;&#x65CB;&#x8F49;</span>
+Debug.Log(Quaternion.identity); <span class="hljs-comment">// &#x8F38;&#x51FA;(0, 0, 0, 1)=(x, y, z, w)</span>
+<span class="hljs-comment">// &#x4EE5;Z&#x8EF8;&#x70BA;&#x8EF8;&#x5FC3;&#x5411;&#x53F3;&#x65CB;&#x8F49;30&#x5EA6;</span>
+Quaternion r = Quaternion.identity;
+r.eularAngles = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">30</span>);
+</code></pre>
+                    <h3 id="euler">.Euler()</h3>
+                    <pre><code class="lang-csharp"><span class="hljs-comment">// &#x5C07;&#x65CB;&#x8F49;&#x7684;&#x89D2;&#x5EA6;&#x8F49;&#x70BA;&#x5411;&#x91CF;</span>
+<span class="hljs-comment">// &#x6B64;&#x6848;&#x4F8B;&#x70BA;&#x5411;&#x53F3;&#x8F49;45&#x5EA6;&#x7684;&#x5411;&#x91CF;</span>
+Debug.Log(Quaternion.Euler(<span class="hljs-number">0</span>, <span class="hljs-number">45</span>, <span class="hljs-number">0</span>) * Vector3.forward);
+</code></pre>
+                    <blockquote>
+                      <p>
+                        Ref:
+                        <a
+                          href="http://answers.unity3d.com/questions/46770/rotate-a-vector3-direction.html"
+                          target="_blank"
+                          >unity3d-forum</a
+                        >
+                      </p>
+                    </blockquote>
+                    <h3 id="lerp--lookrotation">
+                      .Lerp() &amp; .LookRotation()
+                    </h3>
+                    <pre><code class="lang-csharp"><span class="hljs-comment">// &#x5C07;&#x65B9;&#x5411;&#x5411;&#x91CF;&#x56DE;&#x50B3;&#x6210;Quaternion Type&#x5F8C;&#x5229;&#x7528;&#x7DDA;&#x6027;&#x5167;&#x63D2;&#x53BB;&#x8B8A;&#x5316;&#x503C;</span>
+<span class="hljs-comment">// &#x6B64;&#x6848;&#x4F8B;&#x70BA;&#x5C07;&#x7269;&#x4EF6;&#x5411;&#x53F3;&#x8F49;45&#x5EA6;</span>
+transform.rotation = Quaternion.Lerp (
+    transform.rotation,
+    Quaternion.LookRotation(Quaternion.Euler (<span class="hljs-number">0</span>, <span class="hljs-number">45</span>, <span class="hljs-number">0</span>) * Vector3.forward),
+    Time.time
+);
+</code></pre>
+                    <blockquote>
+                      <p>
+                        Ref:
+                        <a
+                          href="http://answers.unity3d.com/questions/62687/aligning-an-objects-rotation-direction-to-a-vector.html"
+                          target="_blank"
+                          >unity3d-forum</a
+                        >
+                      </p>
+                    </blockquote>
+                    <h2 id="physics">Physics</h2>
+                    <p>
+                      &#x6DB5;&#x84CB;&#x7269;&#x7406;&#x76F8;&#x95DC;&#x6578;&#x503C;&#x53CA;&#x65B9;&#x6CD5;&#x3002;
+                    </p>
+                    <h3 id="raycastall">.RayCastAll()</h3>
+                    <p>
+                      &#x56DE;&#x50B3;&#x5C04;&#x7DDA;&#x64CA;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x7269;&#x7406;&#x5BE6;&#x9AD4;&#x53CA;&#x8A0A;&#x606F;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp"><span class="hljs-keyword">using</span> System.Linq;
+...
+Ray ray = <span class="hljs-keyword">new</span> Ray (startPosition, direction);
+RaycastHit[] hits = Physics.RaycastAll(ray, rayLength).OrderBy(h=&gt;h.distance).ToArray();
+
+<span class="hljs-keyword">foreach</span> (RaycastHit hit <span class="hljs-keyword">in</span> hits) {
+    <span class="hljs-comment">// &#x53D6;&#x51FA;&#x7684;hit&#x8A0A;&#x606F;&#x5C07;&#x6703;&#x7531;&#x8FD1;&#x81F3;&#x9060;&#x6392;&#x5217;</span>
+}
+</code></pre>
+                    <blockquote>
+                      <p>
+                        Ref:
+                        <a
+                          href="http://answers.unity3d.com/questions/282165/raycastall-returning-results-in-reverse-order-of-c-1.html"
+                          target="_blank"
+                          >RaycastAll-Returning-Results-In-Reverse-Order</a
+                        >
+                      </p>
+                    </blockquote>
+                    <h2 id="playerprefs">PlayerPrefs</h2>
+                    <p>
+                      &#x5B58;&#x53D6;&#x4F7F;&#x7528;&#x8005;&#x81EA;&#x884C;&#x547D;&#x540D;&#x7684;&#x8B8A;&#x6578;&#x8CC7;&#x8A0A;&#x5728;&#x672C;&#x5730;&#x7AEF;&#xFF0C;&#x53EF;&#x8DE8;&#x5834;&#x666F;&#x53D6;&#x7528;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp"><span class="hljs-comment">// &#x5132;&#x5B58;&#x5206;&#x6578;</span>
+PlayerPrefs.SetInt(<span class="hljs-string">&quot;top1&quot;</span>, <span class="hljs-number">689</span>);
+<span class="hljs-comment">// &#x53D6;&#x5F97;&#x5206;&#x6578;</span>
+Debug.Log(PlayerPrefs.GetInt(<span class="hljs-string">&quot;top1&quot;</span>));
+</code></pre>
+                    <h2 id="resources">Resources</h2>
+                    <p>
+                      &#x88AB;&#x7528;&#x4F86;&#x5B58;&#x53D6;assets&#x8CC7;&#x6599;&#x593E;&#x4E0B;&#x7684;&#x8CC7;&#x6E90;&#x3002;
+                    </p>
+                    <h3 id="loadall">.LoadAll()</h3>
+                    <p><strong>UnityScript</strong></p>
+                    <pre><code class="lang-csharp"><span class="hljs-comment">// &#x628A;Resources/Skin&#x8CC7;&#x6599;&#x593E;&#x4E0B;&#x6240;&#x6709;&#x7684;Sprite&#x7269;&#x4EF6;&#x8B80;&#x51FA;&#x5B58;&#x5230;skin&#x8B8A;&#x6578;&#x4E2D;</span>
+<span class="hljs-keyword">var</span> skin = (Sprite)Resources.LoadAll(<span class="hljs-string">&quot;Skin/&quot;</span>);
+</code></pre>
+                    <p><strong>C Sharp</strong></p>
+                    <pre><code class="lang-csharp"><span class="hljs-comment">// &#x4EA6;&#x53EF;&#x5C07;Multiple Sprite&#x7684;&#x6240;&#x6709;&#x5167;&#x5BB9;&#x5B58;&#x5165;sprites&#x8B8A;&#x6578;&#x4E2D;</span>
+Sprite[] sprites = Resources.LoadAll&lt;Sprite&gt;(<span class="hljs-string">&quot;Sprites&quot;</span>);
+</code></pre>
+                    <blockquote>
+                      <p>
+                        Ref:
+                        <a
+                          href="http://www.sombr.com/2014/06/09/tiled-map-tools-with-unity/"
+                          target="_blank"
+                          >tiled-map-tool-with-unity</a
+                        >
+                      </p>
+                    </blockquote>
+                    <h2 id="application">Application</h2>
+                    <p>
+                      &#x63D0;&#x4F9B;&#x8A31;&#x591A;&#x975C;&#x614B;&#x8B8A;&#x6578;&#x53CA;&#x51FD;&#x6578;&#x4F9B;&#x958B;&#x767C;&#x8005;&#x5B58;&#x53D6;/&#x63A7;&#x5236;&#x61C9;&#x7528;&#x7A0B;&#x5F0F;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp"><span class="hljs-keyword">if</span>(Application.isMobilePlatform); <span class="hljs-comment">// &#x5728;&#x884C;&#x52D5;&#x88DD;&#x7F6E;&#x4E0B;&#x57F7;&#x884C;</span>
+    Applicaiton.LoadLevel(<span class="hljs-string">&quot;Level1&quot;</span>); <span class="hljs-comment">// &#x8B80;&#x53D6;&#x95DC;&#x5361;1</span>
+<span class="hljs-keyword">if</span>(Application.isEditor) <span class="hljs-comment">// &#x5728;&#x7DE8;&#x8F2F;&#x5668;&#x4E0B;&#x57F7;&#x884C;</span>
+    Application.LoadLevelAdditive(<span class="hljs-string">&quot;Level1_Advanced&quot;</span>); <span class="hljs-comment">// &#x52A0;&#x8F09;&#x7269;&#x4EF6;&#x81F3;&#x95DC;&#x5361;1</span>
+</code></pre>
+                    <p>
+                      &#x5229;&#x7528;Slider&#x7269;&#x4EF6;&#x5C55;&#x793A;&#x95DC;&#x5361;&#x8B80;&#x53D6;&#x9032;&#x5EA6;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp">Slider loadingBar;
+AsyncOperation <span class="hljs-keyword">async</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">LoadLevel</span> (<span class="hljs-params"><span class="hljs-keyword">string</span> levelName</span>) </span>{
+    StartCoroutine(LoadLevelWithBar(levelName));
+}
+
+<span class="hljs-function">IEnumerator <span class="hljs-title">LoadLevelWithProgressBar</span> (<span class="hljs-params"><span class="hljs-keyword">string</span> levelName</span>) </span>{
+    <span class="hljs-keyword">async</span> = Application.LoadLevelAsync(levelName);
+    <span class="hljs-keyword">while</span>(!<span class="hljs-keyword">async</span>.isDone) {
+        loadingBar.<span class="hljs-keyword">value</span> = <span class="hljs-keyword">async</span>.progress;
+        <span class="hljs-keyword">yield</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+}
+</code></pre>
+                    <h2 id="www">WWW</h2>
+                    <p>
+                      &#x900F;&#x904E;Web&#x8ACB;&#x6C42;&#x5B58;&#x53D6;URL&#x63D0;&#x4F9B;&#x7684;&#x5167;&#x5BB9;&#x8CC7;&#x8A0A;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span> (<span class="hljs-params"></span>) </span>{
+    StartCoroutine (<span class="hljs-string">&quot;Request&quot;</span>);
+}
+
+<span class="hljs-function">IEnumerator <span class="hljs-title">Request</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> www = <span class="hljs-keyword">new</span> WWW(<span class="hljs-string">&quot;http://www.google.com.tw&quot;</span>);
+    <span class="hljs-keyword">while</span> (!www.isDone &amp;&amp; www.error == <span class="hljs-keyword">null</span>) { <span class="hljs-keyword">yield</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>; }
+    Debug.Log (www.text);
+}
+</code></pre>
+                    <h2 id="yield-instruction">Yield Instruction</h2>
+                    <h3 id="waitforseconds">WaitForSeconds()</h3>
+                    <p>
+                      &#x4F9D;&#x64DA;&#x6B64;&#x8A9E;&#x6CD5;&#x5F8C;&#x65B9;&#x6240;&#x63A5;&#x7E8C;&#x7684;&#x6558;&#x8FF0;&#xFF0C;&#x4F86;&#x6C7A;&#x5B9A;&#x7B49;&#x5F85;&#x6642;&#x9593;&#x3002;
+                    </p>
+                    <p><strong>UnityScript</strong></p>
+                    <pre><code class="lang-js"><span class="hljs-comment">// &#x5148;&#x5370;&#x51FA;Hello&#x4E4B;&#x5F8C;&#x904E;&#x4E00;&#x79D2;&#x624D;&#x5370;&#x51FA;Unity</span>
+Debug.Log(<span class="hljs-string">&quot;Hello, &quot;</span>);
+<span class="hljs-keyword">yield</span> WaitForSeconds(<span class="hljs-number">1</span>);
+Debug.og(<span class="hljs-string">&quot;Unity!&quot;</span>);
+</code></pre>
+                    <p><strong>C#</strong></p>
+                    <pre><code class="lang-csharp"><span class="hljs-comment">// &#x5148;&#x5370;&#x51FA;Hello&#x4E4B;&#x5F8C;&#x904E;&#x4E00;&#x79D2;&#x624D;&#x5370;&#x51FA;Unity</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
+    StartCoroutine(HelloUnity());
+}
+
+<span class="hljs-function">IEnumerator <span class="hljs-title">HelloUnity</span> (<span class="hljs-params"></span>) </span>{
+    Debug.Log(<span class="hljs-string">&quot;Hello, &quot;</span>);
+    <span class="hljs-function"><span class="hljs-keyword">yield</span> return new <span class="hljs-title">WaitForSeconds</span>(<span class="hljs-params"><span class="hljs-number">1</span></span>)</span>;
+    Debug.og(<span class="hljs-string">&quot;Unity!&quot;</span>);
+}
+</code></pre>
+                    <h2 id="monobehaviour">MonoBehaviour</h2>
+                    <h3 id="invokerepeating">InvokeRepeating</h3>
+                    <p>
+                      &#x5728;t1&#x79D2;&#x5F8C;&#x57F7;&#x884C;&#x65B9;&#x6CD5;&#xFF0C;&#x540C;&#x6642;&#x6BCF;t2&#x79D2;&#x5F8C;&#x91CD;&#x8907;&#x57F7;&#x884C;&#x8A72;&#x65B9;&#x6CD5;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span> (<span class="hljs-params"></span>) </span>{
+    InvokeRepeating(<span class="hljs-string">&quot;Test&quot;</span>, t1, t2);
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Test</span> (<span class="hljs-params"></span>) </span>{
+    Debug.Log(<span class="hljs-string">&quot;Test!&quot;</span>);
+}
+</code></pre>
+                  </section>
+                </div>
+                <div class="search-results">
+                  <div class="has-results">
+                    <h1 class="search-results-title">
+                      <span class="search-results-count"></span> results
+                      matching &quot;<span class="search-query"></span>&quot;
+                    </h1>
+                    <ul class="search-results-list"></ul>
+                  </div>
+                  <div class="no-results">
+                    <h1 class="search-results-title">
+                      No results matching &quot;<span
+                        class="search-query"
+                      ></span
+                      >&quot;
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="Components.html"
+          class="navigation navigation-prev"
+          aria-label="Previous page: &#x5143;&#x4EF6;"
+        >
+          <i class="fa fa-angle-left"></i>
+        </a>
+
+        <a
+          href="Else.html"
+          class="navigation navigation-next"
+          aria-label="Next page: &#x5176;&#x4ED6;"
+        >
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
+
+      <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+          gitbook.page.hasChanged({
+            page: {
+              title: "類別",
+              level: "1.3.1.2",
+              depth: 3,
+              next: {
+                title: "其他",
+                level: "1.3.1.3",
+                depth: 3,
+                path: "ch2/Syntax/Else.md",
+                ref: "ch2/Syntax/Else.md",
+                articles: [],
+              },
+              previous: {
+                title: "元件",
+                level: "1.3.1.1",
+                depth: 3,
+                path: "ch2/Syntax/Components.md",
+                ref: "ch2/Syntax/Components.md",
+                articles: [],
+              },
+              dir: "ltr",
+            },
+            config: {
+              plugins: ["comment"],
+              styles: {
+                website: "styles/website.css",
+                pdf: "styles/pdf.css",
+                epub: "styles/epub.css",
+                mobi: "styles/mobi.css",
+                ebook: "styles/ebook.css",
+                print: "styles/print.css",
+              },
+              pluginsConfig: {
+                comment: { highlightCommented: true },
+                highlight: {},
+                search: {},
+                lunr: { maxIndexSize: 1000000, ignoreSpecialCharacters: false },
+                sharing: {
+                  facebook: true,
+                  twitter: true,
+                  google: false,
+                  weibo: false,
+                  instapaper: false,
+                  vk: false,
+                  all: ["facebook", "google", "twitter", "weibo", "instapaper"],
+                },
+                fontsettings: { theme: "white", family: "sans", size: 2 },
+                "theme-default": {
+                  styles: {
+                    website: "styles/website.css",
+                    pdf: "styles/pdf.css",
+                    epub: "styles/epub.css",
+                    mobi: "styles/mobi.css",
+                    ebook: "styles/ebook.css",
+                    print: "styles/print.css",
+                  },
+                  showLevel: false,
+                },
+              },
+              theme: "default",
+              author: "tonypai",
+              pdf: {
+                pageNumbers: true,
+                fontSize: 16,
+                fontFamily: "Arial",
+                paperSize: "a4",
+                chapterMark: "pagebreak",
+                pageBreaksBefore: "/",
+                margin: { right: 62, left: 62, top: 56, bottom: 56 },
+              },
+              structure: {
+                langs: "LANGS.md",
+                readme: "README.md",
+                glossary: "GLOSSARY.md",
+                summary: "SUMMARY.md",
+              },
+              variables: {},
+              title: "Unity Tutorial Note",
+              language: "zh",
+              links: {
+                sidebar: {
+                  "Unity Tutorial Note":
+                    "https://www.gitbook.com/book/tpai/unity-tutorial-note",
+                },
+                gitbook: true,
+              },
+              gitbook: "*",
+              description:
+                "本書為Unity教學課程的筆記，主要內容圍繞著課堂專案所使用到的語法、操作以及技巧為主，供同學複習以及交流。",
+            },
+            file: {
+              path: "ch2/Syntax/Class.md",
+              mtime: "2017-04-18T05:49:33.000Z",
+              type: "markdown",
+            },
+            gitbook: { version: "3.2.2", time: "2017-04-18T05:49:45.242Z" },
+            basePath: "../..",
+            book: { language: "" },
+          });
+        });
+      </script>
+    </div>
+
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-comment/plugin.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+  </body>
+</html>

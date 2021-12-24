@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Unity Tutorial Note</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content />
+    <meta name="generator" content="GitBook 3.2.2" />
+    <meta name="author" content="tonypai" />
+
+    <link rel="stylesheet" href="../gitbook/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="../gitbook/gitbook-plugin-comment/plugin.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../gitbook/gitbook-plugin-highlight/website.css"
+    />
+
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css" />
+
+    <link
+      rel="stylesheet"
+      href="../gitbook/gitbook-plugin-fontsettings/website.css"
+    />
+
+    <meta name="HandheldFriendly" content="true" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="152x152"
+      href="gitbook/images/apple-touch-icon-precomposed-152.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://gstatic.gitbook.com/images/b1c4c86ca817a71628d2debe73be9a64.ico"
+      type="image/x-icon"
+    />
+
+    <link rel="next" href="FreeAssets.html" />
+
+    <link rel="prev" href="QA.html" />
+
+    <style>
+      .book .book-summary .book-search,
+      .book .book-summary ul.summary {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+      }
+      .book-summary {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        overflow-y: auto;
+      }
+      .book-summary > nav {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        overflow-y: overlay;
+      }
+      .gl-wrapper {
+        margin: 0;
+        display: block;
+        padding: 0;
+        position: relative;
+        line-height: 15px;
+        background: #fafafa;
+      }
+      .gl-wrapper:before {
+        background: -webkit-linear-gradient(
+          to bottom,
+          rgba(250, 250, 250, 0) 0%,
+          #fafafa 100%
+        );
+        background: -moz-linear-gradient(
+          to bottom,
+          rgba(250, 250, 250, 0) 0%,
+          #fafafa 100%
+        );
+        top: -24px;
+        width: 100%;
+        height: 24px;
+        content: "";
+        display: block;
+        position: absolute;
+        background: linear-gradient(
+          to bottom,
+          rgba(250, 250, 250, 0) 0%,
+          #fafafa 100%
+        );
+      }
+      .book.color-theme-1 .gl-wrapper {
+        background: #121212;
+      }
+      .book.color-theme-1 .gl-wrapper:before {
+        background: -webkit-linear-gradient(
+          to bottom,
+          rgba(18, 18, 18, 0) 0%,
+          #121212 100%
+        );
+        background: -moz-linear-gradient(
+          to bottom,
+          rgba(18, 18, 18, 0) 0%,
+          #121212 100%
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba(18, 18, 18, 0) 0%,
+          #121212 100%
+        );
+      }
+      .book.color-theme-2 .gl-wrapper {
+        background: #2e3243;
+      }
+      .book.color-theme-2 .gl-wrapper:before {
+        background: -webkit-linear-gradient(
+          to bottom,
+          rgba(46, 50, 67, 0) 0%,
+          #2e3243 100%
+        );
+        background: -moz-linear-gradient(
+          to bottom,
+          rgba(46, 50, 67, 0) 0%,
+          #2e3243 100%
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba(46, 50, 67, 0) 0%,
+          #2e3243 100%
+        );
+      }
+      .gl-wrapper .gitbook-link {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        color: #9daab6;
+        margin: 16px;
+        display: flex;
+        padding: 0;
+        align-items: center;
+        margin-left: 32px;
+        padding-top: 8px;
+        padding-left: 16px;
+        border-radius: 3px;
+        padding-right: 16px;
+        padding-bottom: 8px;
+        text-decoration: none;
+        background-color: #e6ecf1;
+        -webkit-box-align: center;
+      }
+      .gl-wrapper .tm-logo {
+        margin: 0;
+        display: block;
+        padding: 0;
+        font-size: 40px;
+      }
+      .gl-wrapper .tm-content {
+        flex: 1;
+        margin: 0;
+        display: block;
+        padding: 0;
+        padding-left: 16px;
+      }
+      .gl-wrapper .tm-content .container {
+        margin: 0;
+        display: block;
+        padding: 0;
+      }
+      .gl-wrapper .tm-content .tm-container .tm-text {
+        font-size: 12px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        line-height: 1.625;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="book">
+      <div class="book-summary">
+        <nav role="navigation">
+          <ul class="summary">
+            <li>
+              <a href="#" class="custom-link">Unity Tutorial Note</a>
+            </li>
+
+            <li class="divider"></li>
+
+            <li class="chapter" data-level="1.1" data-path="../">
+              <a href="../"> &#x7C21;&#x4ECB; </a>
+            </li>
+
+            <li
+              class="chapter"
+              data-level="1.2"
+              data-path="../xin-shou-shang-lu.html"
+            >
+              <a href="../xin-shou-shang-lu.html">
+                &#x65B0;&#x624B;&#x4E0A;&#x8DEF;
+              </a>
+
+              <ul class="articles">
+                <li
+                  class="chapter"
+                  data-level="1.2.1"
+                  data-path="Preparation.html"
+                >
+                  <a href="Preparation.html">
+                    &#x524D;&#x7F6E;&#x4F5C;&#x696D;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.2.2"
+                  data-path="Interface.html"
+                >
+                  <a href="Interface.html">
+                    &#x5E38;&#x7528;&#x4ECB;&#x9762;
+                  </a>
+                </li>
+
+                <li class="chapter" data-level="1.2.3" data-path="Outline.html">
+                  <a href="Outline.html"> &#x958B;&#x767C;&#x7DB1;&#x8981; </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.2.4"
+                  data-path="Gameobject.html"
+                >
+                  <a href="Gameobject.html">
+                    &#x904A;&#x6232;&#x7269;&#x4EF6;
+                  </a>
+                </li>
+
+                <li class="chapter" data-level="1.2.5" data-path="Tips.html">
+                  <a href="Tips.html"> &#x8A23;&#x7AC5;&#x6280;&#x5DE7; </a>
+                </li>
+
+                <li class="chapter" data-level="1.2.6" data-path="QA.html">
+                  <a href="QA.html"> &#x7591;&#x96E3;&#x96DC;&#x75C7; </a>
+                </li>
+
+                <li
+                  class="chapter active"
+                  data-level="1.2.7"
+                  data-path="Deployment.html"
+                >
+                  <a href="Deployment.html">
+                    &#x7DE8;&#x8B6F;&#x90E8;&#x7F72;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.2.8"
+                  data-path="FreeAssets.html"
+                >
+                  <a href="FreeAssets.html">
+                    &#x514D;&#x8CBB;&#x7D20;&#x6750;
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="chapter" data-level="1.3">
+              <span> &#x8173;&#x672C;&#x8A9E;&#x6CD5; </span>
+
+              <ul class="articles">
+                <li class="chapter" data-level="1.3.1">
+                  <span> &#x8A9E;&#x6CD5;&#x4ECB;&#x7D39; </span>
+
+                  <ul class="articles">
+                    <li
+                      class="chapter"
+                      data-level="1.3.1.1"
+                      data-path="../ch2/Syntax/Components.html"
+                    >
+                      <a href="../ch2/Syntax/Components.html">
+                        &#x5143;&#x4EF6;
+                      </a>
+                    </li>
+
+                    <li
+                      class="chapter"
+                      data-level="1.3.1.2"
+                      data-path="../ch2/Syntax/Class.html"
+                    >
+                      <a href="../ch2/Syntax/Class.html"> &#x985E;&#x5225; </a>
+                    </li>
+
+                    <li
+                      class="chapter"
+                      data-level="1.3.1.3"
+                      data-path="../ch2/Syntax/Else.html"
+                    >
+                      <a href="../ch2/Syntax/Else.html"> &#x5176;&#x4ED6; </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.3.2"
+                  data-path="../ch2/ScriptLifecycle.html"
+                >
+                  <a href="../ch2/ScriptLifecycle.html">
+                    &#x4E8B;&#x4EF6;&#x9031;&#x671F;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.3.3"
+                  data-path="../ch2/UsefulScripts.html"
+                >
+                  <a href="../ch2/UsefulScripts.html">
+                    &#x597D;&#x7528;&#x8173;&#x672C;
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="chapter" data-level="1.4">
+              <span> &#x9032;&#x968E;&#x6574;&#x5408; </span>
+
+              <ul class="articles">
+                <li class="chapter" data-level="1.4.1">
+                  <span> &#x904A;&#x6232;&#x670D;&#x52D9; </span>
+
+                  <ul class="articles">
+                    <li
+                      class="chapter"
+                      data-level="1.4.1.1"
+                      data-path="../ch3/GoogleGameService.html"
+                    >
+                      <a href="../ch3/GoogleGameService.html">
+                        Google Game Service
+                      </a>
+                    </li>
+
+                    <li
+                      class="chapter"
+                      data-level="1.4.1.2"
+                      data-path="../ch3/FacebookSDK.html"
+                    >
+                      <a href="../ch3/FacebookSDK.html"> Facebook SDK </a>
+                    </li>
+
+                    <li
+                      class="chapter"
+                      data-level="1.4.1.3"
+                      data-path="../ch3/GameJoltSDK.html"
+                    >
+                      <a href="../ch3/GameJoltSDK.html"> GameJolt SDK </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.4.2"
+                  data-path="../ch3/InAppPurchase.html"
+                >
+                  <a href="../ch3/InAppPurchase.html">
+                    &#x5167;&#x8CFC;&#x6D88;&#x8CBB;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.4.3"
+                  data-path="../ch3/Advertisement.html"
+                >
+                  <a href="../ch3/Advertisement.html">
+                    &#x7F6E;&#x5165;&#x5EE3;&#x544A;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.4.4"
+                  data-path="../ch3/ApplePushNotificationService.html"
+                >
+                  <a href="../ch3/ApplePushNotificationService.html">
+                    &#x8A0A;&#x606F;&#x63A8;&#x64AD;
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="chapter" data-level="1.5">
+              <span> &#x958B;&#x767C;&#x96DC;&#x8A18; </span>
+
+              <ul class="articles">
+                <li
+                  class="chapter"
+                  data-level="1.5.1"
+                  data-path="../ch4/OptimizePerformance.html"
+                >
+                  <a href="../ch4/OptimizePerformance.html">
+                    &#x512A;&#x5316;&#x6280;&#x5DE7;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.2"
+                  data-path="../ch4/DifferenciesBetweenUnityscriptAndCsharp.html"
+                >
+                  <a href="../ch4/DifferenciesBetweenUnityscriptAndCsharp.html">
+                    &#x8A9E;&#x8A00;&#x5DEE;&#x7570;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.3"
+                  data-path="../ch4/DesignPattern.html"
+                >
+                  <a href="../ch4/DesignPattern.html">
+                    &#x8A2D;&#x8A08;&#x6A21;&#x5F0F;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.4"
+                  data-path="../ch4/Navigation.html"
+                >
+                  <a href="../ch4/Navigation.html">
+                    &#x81EA;&#x52D5;&#x5C0B;&#x8DEF;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.5"
+                  data-path="../ch4/Controller.html"
+                >
+                  <a href="../ch4/Controller.html">
+                    &#x624B;&#x628A;&#x8A2D;&#x7F6E;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.6"
+                  data-path="../ch4/ProjectManagement.html"
+                >
+                  <a href="../ch4/ProjectManagement.html">
+                    &#x5C08;&#x6848;&#x63A7;&#x7BA1;
+                  </a>
+                </li>
+
+                <li
+                  class="chapter"
+                  data-level="1.5.7"
+                  data-path="../ch4/OOP.html"
+                >
+                  <a href="../ch4/OOP.html">
+                    &#x7269;&#x4EF6;&#x5C0E;&#x5411;
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="divider"></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="book-body">
+        <div class="body-inner">
+          <div class="page-wrapper" tabindex="-1" role="main">
+            <div class="page-inner">
+              <div id="book-search-results">
+                <div class="search-noresults">
+                  <section class="normal markdown-section">
+                    <h2 id="&#x7DE8;&#x8B6F;&#x90E8;&#x7F72;">
+                      &#x7DE8;&#x8B6F;&#x90E8;&#x7F72;
+                    </h2>
+                    <h3 id="export-to-html5-webgl">Export to HTML5 WebGL</h3>
+                    <p><strong>&#x6A94;&#x6848;&#x7D50;&#x69CB;</strong></p>
+                    <pre><code>.htaccess      # &#x8986;&#x5BEB;&#x4F3A;&#x670D;&#x5668;&#x5B58;&#x53D6;&#x898F;&#x5247;
+index.html
+Release/       # &#x7DE8;&#x8B6F;&#x5F8C;&#x672A;&#x58D3;&#x7E2E;&#x7684;&#x904A;&#x6232;&#x6A94;&#x6848;
+Compressed/    # &#x7DE8;&#x8B6F;&#x5F8C;&#x5DF2;&#x58D3;&#x7E2E;&#x7684;&#x904A;&#x6232;&#x6A94;&#x6848;
+TemplateData/  # &#x4E0B;&#x6240;&#x6709;&#x6A94;&#x6848;&#x53EF;&#x63DB;&#x70BA;&#x81EA;&#x88FD;&#x5716;
+</code></pre>
+                    <p><strong>&#x8A2D;&#x5B9A;&#x4E00;&#x89BD;</strong></p>
+                    <p>
+                      &#x50C5;&#x4F9B;&#x53C3;&#x8003;&#x7528;&#xFF0C;&#x6839;&#x64DA;&#x500B;&#x4EBA;&#x9700;&#x6C42;&#x8ABF;&#x6574;&#x3002;
+                    </p>
+                    <ul>
+                      <li>
+                        Build Settings
+                        <ul>
+                          <li>
+                            Optimization Level - Fastest (very slow builds)
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        Player Settings
+                        <ul>
+                          <li>
+                            Other Settings
+                            <ul>
+                              <li>Stripping Level - Use micro mscorlib</li>
+                            </ul>
+                          </li>
+                          <li>
+                            Publishing Settings
+                            <ul>
+                              <li>
+                                WebGL Memory Size - 222 MB (use profiler to find
+                                out)
+                              </li>
+                              <li>Enable Exceptions - None</li>
+                              <li>Data Caching - Enable</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <p><strong>.htaccess</strong></p>
+                    <ul>
+                      <li>
+                        &#x5982;&#x679C;&#x662F;&#x5141;&#x8A31;.htaccess&#x7684;&#x4F3A;&#x670D;&#x5668;&#x5247;&#x53EF;&#x5C07;Release/&#x79FB;&#x9664;&#xFF0C;&#x4EE5;Compressed/&#x53D6;&#x4EE3;&#x3002;
+                      </li>
+                      <li>
+                        &#x5982;&#x679C;&#x662F;&#x4E0D;&#x5141;&#x8A31;.htaccess&#x7684;&#x4F3A;&#x670D;&#x5668;(itch.io)&#x5247;&#x5FC5;&#x9808;&#x9023;&#x540C;Release/&#x4E00;&#x8D77;&#x58D3;&#x7E2E;&#x4E26;&#x4E0A;&#x50B3;&#x3002;
+                      </li>
+                    </ul>
+                    <p><strong>&#x5176;&#x4ED6;</strong></p>
+                    <ul>
+                      <li>
+                        &#x4E0A;&#x50B3;itch.io&#x5F8C;&#xFF0C;&#x6ED1;&#x9F20;&#x4E8B;&#x4EF6;&#x53EF;&#x6B63;&#x5E38;&#x904B;&#x4F5C;&#x4F46;&#x9375;&#x76E4;&#x4E0D;&#x80FD;&#xFF0C;&#x662F;&#x56E0;&#x70BA;&#x7576;&#x6C92;&#x6709;focus&#x5728;iframe&#x4E0A;&#x6642;&#xFF0C;&#x9375;&#x76E4;&#x4E8B;&#x4EF6;&#x662F;&#x7121;&#x6CD5;&#x89F8;&#x767C;&#x7684;&#xFF0C;&#x53EA;&#x8981;&#x5C07;&#x958B;&#x6210;&#x5168;&#x87A2;&#x5E55;&#x6216;&#x8005;&#x52A0;&#x5165;&#x4E0B;&#x65B9;&#x8A9E;&#x6CD5;&#x81F3;index.html&#x4E2D;&#x5373;&#x53EF;&#x3002;
+                      </li>
+                    </ul>
+                    <pre><code>window.onload = function(){
+    window.focus();
+}
+
+window.onclick = function(){
+    window.focus();
+}
+</code></pre>
+                    <ul>
+                      <li>
+                        &#x5982;&#x679C;&#x8DF3;&#x51FA;&#x4E00;&#x5806;Warning&#x662F;&#x6709;&#x95DC;Mip
+                        Maps&#x7684;&#xFF0C;&#x8ACB;&#x76F4;&#x63A5;&#x5C07;&#x6240;&#x6709;&#x5716;&#x793A;&#x7684;Generate
+                        Mip
+                        Maps&#x7684;&#x8A2D;&#x5B9A;&#x5168;&#x90E8;&#x95DC;&#x6389;&#xFF0C;&#x56E0;&#x70BA;Mip
+                        Maps&#x5728;WebGL&#x7121;&#x6CD5;&#x57F7;&#x884C;&#x3002;
+                      </li>
+                    </ul>
+                    <blockquote>
+                      <p>Ref:</p>
+                      <ul>
+                        <li>
+                          <a
+                            href="https://docs.unity3d.com/Manual/webgl-building.html"
+                            target="_blank"
+                            >Building and Running a WebGL Project</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="https://ocias.com/blog/how-to-upload-unity-webgl-content/"
+                            target="_blank"
+                            >How to upload Unity WebGL content</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="https://www.reddit.com/r/gamedev/comments/39shqa/itchio_and_unity3d_webgl/"
+                            target="_blank"
+                            >itch.io and Unity3D WebGL</a
+                          >
+                        </li>
+                      </ul>
+                    </blockquote>
+                    <h3 id="64-bit-and-ios-8-requirements-for-new-apps">
+                      64-bit and iOS 8 Requirements for New Apps
+                    </h3>
+                    <p>
+                      &#x860B;&#x679C;&#x5B98;&#x65B9;&#x5BA3;&#x5E03;&#x5F9E;2015/02/01&#x958B;&#x59CB;&#xFF0C;&#x6240;&#x6709;&#x4E0A;&#x50B3;&#x81F3;Apple
+                      Store&#x7684;App&#x7686;&#x5FC5;&#x9808;&#x652F;&#x63F4;64-bit&#x800C;&#x4E14;&#x5FC5;&#x9808;&#x662F;&#x7528;iOS
+                      8&#x7684;SDK&#x5EFA;&#x7F6E;&#x800C;&#x6210;&#x3002;
+                    </p>
+                    <blockquote>
+                      <p>
+                        Ref:
+                        <a
+                          href="https://developer.apple.com/news/?id=10202014a"
+                          target="_blank"
+                          >Apple News</a
+                        >
+                      </p>
+                    </blockquote>
+                    <p><strong>iOS &#x5EFA;&#x7F6E;&#x6307;&#x5357;</strong></p>
+                    <p>
+                      &#x5982;&#x679C;&#x5C08;&#x6848;&#x6C92;&#x6709;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x5916;&#x639B;&#xFF0C;&#x975E;&#x5E38;&#x5EFA;&#x8B70;&#x53EF;&#x4EE5;&#x5C07;Scripting
+                      Backend&#x8A2D;&#x5B9A;&#x6210;IL2CPP&#x7528;&#x4EE5;&#x63D0;&#x5347;&#x6574;&#x9AD4;&#x6548;&#x80FD;&#x3002;&#x53E6;&#x5916;&#x5C31;&#x662F;&#x5C07;Architecture&#x8A2D;&#x5B9A;&#x6210;Universal&#xFF0C;&#x5982;&#x6B64;&#x4E00;&#x4F86;&#x7522;&#x751F;&#x7684;XCode&#x5C08;&#x6848;&#x4FBF;&#x652F;&#x63F4;64-bit&#x4E86;&#x3002;
+                    </p>
+                    <p><img src="http://i.imgur.com/i29Ezz8.png" alt /></p>
+                    <blockquote>
+                      <p>
+                        Ref:
+                        <a
+                          href="http://blogs.unity3d.com/2015/01/29/unity-4-6-2-ios-64-bit-support/"
+                          target="_blank"
+                          >UNITY 4.6.2 IOS 64-BIT SUPPORT</a
+                        >&#x3001;<a
+                          href="http://docs.unity3d.com/Manual/iphone-64bit.html"
+                          target="_blank"
+                          >Upgrading to 64 bit iOS</a
+                        >
+                      </p>
+                    </blockquote>
+                    <h3 id="android-debug-tool">Android Debug Tool</h3>
+                    <p>
+                      &#x53EF;&#x4EE5;&#x64F7;&#x53D6;log&#x7684;Debug&#x5DE5;&#x5177;
+                    </p>
+                    <pre><code>// better solution
+./monitor
+
+// clear log first
+./adb logcat -c
+// (1) dump log with unity tag
+./adb logcat -s unity &gt; ~/desktop/log.txt
+// (2) more specific information
+./adb logcat -s unity activitymanager packagemanager dalvikvm debug &gt; ~/desktop/log.txt
+</code></pre>
+                    <h3 id="testflight">
+                      <a
+                        href="https://testflightapp.com/dashboard/"
+                        target="_blank"
+                        >Testflight</a
+                      >
+                    </h3>
+                    <ul>
+                      <li>
+                        <a
+                          href="http://www.hkej.com/events/hkejiphone/html/how.jsp"
+                          target="_blank"
+                          >&#x53D6;&#x5F97;&#x88DD;&#x7F6E;&#x7684;UDID</a
+                        >&#x586B;&#x5165;<a
+                          href="https://developer.apple.com/account/ios/device/deviceList.action"
+                          target="_blank"
+                          >Devices of CIP</a
+                        >&#x3002;
+                      </li>
+                      <li>
+                        &#x5EFA;&#x7ACB;&#x4E00;&#x500B;for
+                        Ad-Hoc&#x7684;Provision Profile&#x3002;
+                      </li>
+                      <li>
+                        Build &gt; Archive &gt; Organizer &gt; Export &gt;
+                        Ad-Hoc &gt; Select P-Profile &gt; .ipa
+                      </li>
+                      <li>
+                        &#x4E0A;&#x50B3;.ipa&#x4E26;&#x767C;&#x9001;&#x9080;&#x8ACB;&#x7D66;&#x6E2C;&#x8A66;&#x73A9;&#x5BB6;&#x3002;
+                      </li>
+                      <li>
+                        &#x73A9;&#x5BB6;&#x4F7F;&#x7528;&#x88DD;&#x7F6E;&#x6253;&#x958B;<a
+                          href="https://www.testflightapp.com/"
+                          target="_blank"
+                          >testflight</a
+                        >&#x5373;&#x53EF;&#x958B;&#x59CB;&#x6E2C;&#x8A66;&#x3002;
+                      </li>
+                    </ul>
+                    <h3 id="cant-find-java-directory-location">
+                      Can&apos;t find java directory location
+                    </h3>
+                    <p>
+                      <strong
+                        >&#x5728;&#x8F38;&#x51FA;APK&#x6642;&#x51FA;&#x73FE;&#x5982;&#x4E0B;&#x932F;&#x8AA4;&#x8A0A;&#x606F;</strong
+                      >
+                    </p>
+                    <blockquote>
+                      <p>
+                        error building player: win32exception:
+                        applicationname=&apos;c:\program files
+                        (x86)\java\jre7\bin\javac.exe&apos;
+                      </p>
+                    </blockquote>
+                    <p>
+                      &#x986F;&#x7136;Unity&#x7121;&#x6CD5;&#x5075;&#x6E2C;&#x5230;java&#x8CC7;&#x6599;&#x593E;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x4EE3;&#x8868;&#x958B;&#x767C;&#x8005;&#x6C92;&#x6709;&#x5B89;&#x88DD;jdk&#x6216;&#x8005;&#x6C92;&#x6709;&#x6B63;&#x78BA;&#x8A2D;&#x5B9A;&#x7CFB;&#x7D71;&#x74B0;&#x5883;&#x8B8A;&#x6578;&#x3002;
+                    </p>
+                    <h3 id="unable-to-convert-classes-into-dex-format">
+                      Unable to convert classes into dex format
+                    </h3>
+                    <p>
+                      &#x6211;&#x66FE;&#x5C07;Facebook,
+                      Admob&#x4EE5;&#x53CA;Soomla&#x4E09;&#x5BB6;&#x7684;SDK&#x6574;&#x5408;&#x81F3;&#x4E00;&#x6B3E;&#x904A;&#x6232;&#x7576;&#x4E2D;&#xFF0C;&#x4F7F;&#x5F97;&#x6B64;&#x4E09;SDK&#x4E2D;&#x6240;&#x542B;&#x7684;jar&#x91CD;&#x8907;&#x5C0E;&#x81F4;&#x6B64;&#x554F;&#x984C;&#x767C;&#x751F;&#xFF0C;&#x76EE;&#x524D;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x5C07;&#x591A;&#x9918;&#x7684;jar&#x79FB;&#x9664;&#xFF0C;&#x4F46;&#x554F;&#x984C;&#x662F;&#x6211;&#x8A72;&#x79FB;&#x9664;&#x54EA;&#x500B;jar&#x6A94;&#xFF1F;&#x622A;&#x81EA;&#x76EE;&#x524D;&#x70BA;&#x6B62;&#x6211;&#x5617;&#x8A66;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4E00;&#x500B;&#x4E00;&#x500B;&#x62D4;&#x9664;&#x76F4;&#x5230;&#x6C92;&#x6709;error&#x70BA;&#x6B62;&#x3002;(&#x571F;&#x6CD5;&#x7149;&#x92FC;
+                      Orz)
+                    </p>
+                    <blockquote>
+                      <p>
+                        Ref:
+                        <a
+                          href="http://answers.unity3d.com/questions/765961/multiple-plugin-conflict.html"
+                          target="_blank"
+                          >multiple-plugin-conflict</a
+                        >
+                      </p>
+                    </blockquote>
+                    <h3
+                      id="xcode&#x7DE8;&#x8B6F;&#x6642;&#x51FA;&#x73FE;command-usrbincodesign-failed-with-exit-code-1"
+                    >
+                      Xcode&#x7DE8;&#x8B6F;&#x6642;&#x51FA;&#x73FE;&quot;Command
+                      /usr/bin/codesign failed with exit code 1&quot;
+                    </h3>
+                    <pre><code>Xcode -&gt; Preferences -&gt; Accounts -&gt; Choose your account, and then View Details -&gt; Refresh (button on bottom left)
+</code></pre>
+                    <p>
+                      Provision
+                      Profile&#x672A;&#x540C;&#x6B65;&#x5C0E;&#x81F4;&#x554F;&#x984C;&#x767C;&#x751F;&#x3002;
+                    </p>
+                    <blockquote>
+                      <p>
+                        Ref:
+                        <a
+                          href="http://stackoverflow.com/questions/26009981/why-am-i-getting-the-error-command-usr-bin-codesign-failed-with-exit-code-1-i"
+                          target="_blank"
+                          >stackoverflow</a
+                        >
+                      </p>
+                    </blockquote>
+                    <h3
+                      id="&#x5728;xcode&#x6253;&#x5305;&#x5B8C;&#x6210;&#x9001;validate&#x6642;&#x51FA;&#x73FE;you-are-not-authorized-to-use-this-service"
+                    >
+                      &#x5728;Xcode&#x6253;&#x5305;&#x5B8C;&#x6210;&#x9001;Validate&#x6642;&#x51FA;&#x73FE;&quot;You
+                      are not authorized to use this service&quot;
+                    </h3>
+                    <p>
+                      &#x79FB;&#x9664;&#x5728;Xcode
+                      Preferences&#x4E2D;&#x7684;Apple
+                      ID&#x4E26;&#x91CD;&#x65B0;&#x52A0;&#x5165;&#x5373;&#x53EF;&#x89E3;&#x6C7A;&#x3002;
+                    </p>
+                    <blockquote>
+                      <p>
+                        Ref:
+                        <a
+                          href="http://stackoverflow.com/questions/26051784/xcode-6-upload-app-with-error-itunes-store-operation-failed-error-description-n/28307113#28307113"
+                          target="_blank"
+                          >stackoverflow</a
+                        >
+                      </p>
+                    </blockquote>
+                  </section>
+                </div>
+                <div class="search-results">
+                  <div class="has-results">
+                    <h1 class="search-results-title">
+                      <span class="search-results-count"></span> results
+                      matching &quot;<span class="search-query"></span>&quot;
+                    </h1>
+                    <ul class="search-results-list"></ul>
+                  </div>
+                  <div class="no-results">
+                    <h1 class="search-results-title">
+                      No results matching &quot;<span
+                        class="search-query"
+                      ></span
+                      >&quot;
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="QA.html"
+          class="navigation navigation-prev"
+          aria-label="Previous page: &#x7591;&#x96E3;&#x96DC;&#x75C7;"
+        >
+          <i class="fa fa-angle-left"></i>
+        </a>
+
+        <a
+          href="FreeAssets.html"
+          class="navigation navigation-next"
+          aria-label="Next page: &#x514D;&#x8CBB;&#x7D20;&#x6750;"
+        >
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
+
+      <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+          gitbook.page.hasChanged({
+            page: {
+              title: "編譯部署",
+              level: "1.2.7",
+              depth: 2,
+              next: {
+                title: "免費素材",
+                level: "1.2.8",
+                depth: 2,
+                path: "ch1/FreeAssets.md",
+                ref: "ch1/FreeAssets.md",
+                articles: [],
+              },
+              previous: {
+                title: "疑難雜症",
+                level: "1.2.6",
+                depth: 2,
+                path: "ch1/QA.md",
+                ref: "ch1/QA.md",
+                articles: [],
+              },
+              dir: "ltr",
+            },
+            config: {
+              plugins: ["comment"],
+              styles: {
+                website: "styles/website.css",
+                pdf: "styles/pdf.css",
+                epub: "styles/epub.css",
+                mobi: "styles/mobi.css",
+                ebook: "styles/ebook.css",
+                print: "styles/print.css",
+              },
+              pluginsConfig: {
+                comment: { highlightCommented: true },
+                highlight: {},
+                search: {},
+                lunr: { maxIndexSize: 1000000, ignoreSpecialCharacters: false },
+                sharing: {
+                  facebook: true,
+                  twitter: true,
+                  google: false,
+                  weibo: false,
+                  instapaper: false,
+                  vk: false,
+                  all: ["facebook", "google", "twitter", "weibo", "instapaper"],
+                },
+                fontsettings: { theme: "white", family: "sans", size: 2 },
+                "theme-default": {
+                  styles: {
+                    website: "styles/website.css",
+                    pdf: "styles/pdf.css",
+                    epub: "styles/epub.css",
+                    mobi: "styles/mobi.css",
+                    ebook: "styles/ebook.css",
+                    print: "styles/print.css",
+                  },
+                  showLevel: false,
+                },
+              },
+              theme: "default",
+              author: "tonypai",
+              pdf: {
+                pageNumbers: true,
+                fontSize: 16,
+                fontFamily: "Arial",
+                paperSize: "a4",
+                chapterMark: "pagebreak",
+                pageBreaksBefore: "/",
+                margin: { right: 62, left: 62, top: 56, bottom: 56 },
+              },
+              structure: {
+                langs: "LANGS.md",
+                readme: "README.md",
+                glossary: "GLOSSARY.md",
+                summary: "SUMMARY.md",
+              },
+              variables: {},
+              title: "Unity Tutorial Note",
+              language: "zh",
+              links: {
+                sidebar: {
+                  "Unity Tutorial Note":
+                    "https://www.gitbook.com/book/tpai/unity-tutorial-note",
+                },
+                gitbook: true,
+              },
+              gitbook: "*",
+              description:
+                "本書為Unity教學課程的筆記，主要內容圍繞著課堂專案所使用到的語法、操作以及技巧為主，供同學複習以及交流。",
+            },
+            file: {
+              path: "ch1/Deployment.md",
+              mtime: "2017-04-18T05:49:33.000Z",
+              type: "markdown",
+            },
+            gitbook: { version: "3.2.2", time: "2017-04-18T05:49:45.242Z" },
+            basePath: "..",
+            book: { language: "" },
+          });
+        });
+      </script>
+    </div>
+
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-comment/plugin.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+
+    <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+  </body>
+</html>
