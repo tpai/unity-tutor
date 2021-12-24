@@ -9,23 +9,23 @@
     <meta name="generator" content="GitBook 3.2.2" />
     <meta name="author" content="tonypai" />
 
-    <link rel="stylesheet" href="../gitbook/style.css" />
+    <link rel="stylesheet" href="../../gitbook/style.css" />
 
     <link
       rel="stylesheet"
-      href="../gitbook/gitbook-plugin-comment/plugin.css"
+      href="../../gitbook/gitbook-plugin-comment/plugin.css"
     />
 
     <link
       rel="stylesheet"
-      href="../gitbook/gitbook-plugin-highlight/website.css"
+      href="../../gitbook/gitbook-plugin-highlight/website.css"
     />
 
-    <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css" />
+    <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css" />
 
     <link
       rel="stylesheet"
-      href="../gitbook/gitbook-plugin-fontsettings/website.css"
+      href="../../gitbook/gitbook-plugin-fontsettings/website.css"
     />
 
     <meta name="HandheldFriendly" content="true" />
@@ -46,9 +46,7 @@
       type="image/x-icon"
     />
 
-    <link rel="next" href="../ScriptLifecycle.html" />
-
-    <link rel="prev" href="Class.html" />
+    <link rel="next" href="Class.html" />
 
     <style>
       .book .book-summary .book-search,
@@ -308,7 +306,7 @@
 
                   <ul class="articles">
                     <li
-                      class="chapter"
+                      class="chapter active"
                       data-level="1.3.1.1"
                       data-path="Components.html"
                     >
@@ -324,7 +322,7 @@
                     </li>
 
                     <li
-                      class="chapter active"
+                      class="chapter"
                       data-level="1.3.1.3"
                       data-path="Else.html"
                     >
@@ -508,48 +506,219 @@
 
       <div class="book-body">
         <div class="body-inner">
+          <div class="book-header" role="navigation">
+            <!-- Title -->
+            <h1>
+              <i class="fa fa-circle-o-notch fa-spin"></i>
+              <a href="../..">&#x5143;&#x4EF6;</a>
+            </h1>
+          </div>
+
           <div class="page-wrapper" tabindex="-1" role="main">
             <div class="page-inner">
               <div id="book-search-results">
                 <div class="search-noresults">
                   <section class="normal markdown-section">
-                    <h2 id="properties">Properties</h2>
+                    <h2 id="transform">Transform</h2>
                     <p>
-                      &#x5B9A;&#x7FA9;Class&#x4E0B;Variable&#x7684;Getter&#x548C;Setter&#x3002;
+                      Transform&#x662F;Unity&#x4E4B;&#x4E2D;&#x70BA;&#x6578;&#x773E;&#x591A;&#x5143;&#x4EF6;(Component)&#x4E4B;&#x4E00;&#xFF0C;&#x7BA1;&#x7406;&#x4F4D;&#x7F6E;&#x5EA7;&#x6A19;&#x3001;&#x65CB;&#x8F49;&#x89D2;&#x5EA6;&#x4EE5;&#x53CA;&#x5927;&#x5C0F;&#x6BD4;&#x4F8B;&#x7B49;&#x5C6C;&#x6027;&#x3002;
                     </p>
-                    <pre><code class="lang-csharp"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> exp;
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> Exp { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
-<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> lv;
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> Lv {
-    <span class="hljs-keyword">get</span> {
-        <span class="hljs-keyword">return</span> exp / <span class="hljs-number">100</span>;
-    }
-    <span class="hljs-keyword">set</span> {
-        exp = <span class="hljs-keyword">value</span> * <span class="hljs-number">100</span>;
-    }
-}
+                    <p>
+                      <strong
+                        >&#x7269;&#x4EF6;&#x4F4D;&#x7F6E;&#x5411;&#x524D;(Z)&#x79FB;&#x52D5;&#x4E00;&#x500B;&#x55AE;&#x4F4D;</strong
+                      >
+                    </p>
+                    <pre><code class="lang-csharp"><span class="hljs-comment">// from (0, 0, 0) to (0, 0, 1)</span>
+transform.TransformPoint (Vector3.forward);
 </code></pre>
-                    <h2 id="namespace">Namespace</h2>
+                    <h2 id="recttransform">RectTransform</h2>
                     <p>
-                      &#x4F7F;&#x7528;&#x540D;&#x7A31;&#x7A7A;&#x9593;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x6389;&#x4E0D;&#x540C;&#x958B;&#x767C;&#x8005;&#x4E4B;&#x9593;Class&#x547D;&#x540D;&#x885D;&#x7A81;&#x554F;&#x984C;&#x3002;
+                      &#x7528;&#x4F86;&#x5132;&#x5B58;UGUI&#x7684;&#x4F4D;&#x7F6E;&#x3001;&#x5927;&#x5C0F;&#x4EE5;&#x53CA;&#x9328;&#x9EDE;&#x7B49;&#x7B49;&#x8CC7;&#x8A0A;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;&#x6240;&#x6709;UGUI&#x7269;&#x4EF6;&#x7686;&#x5F9E;&#x5C6C;&#x65BC;Canvas&#x3002;
                     </p>
-                    <pre><code class="lang-csharp"><span class="hljs-comment">// &#x5B9A;&#x7FA9;&#x540D;&#x7A31;&#x7A7A;&#x9593;</span>
-<span class="hljs-keyword">namespace</span> <span class="hljs-title">Sample</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">SomeClass</span> {}
-}
+                    <pre><code class="lang-csharp"><span class="hljs-comment">// &#x52D5;&#x614B;&#x751F;&#x6210;UGUI&#x7269;&#x4EF6;&#x4E14;&#x4F4D;&#x7F6E;&#x4E0D;&#x504F;&#x79FB; &#x91CD;&#x9EDE;&#x5728;&#x65BC;worldPositionStays&#x8981;&#x8A2D;&#x6210;false</span>
+GameObject obj = (GameObject)Instantiate(uguiPrefab);
+obj.SetParent (GameObject.Find(<span class="hljs-string">&quot;Canvas&quot;</span>).transform, <span class="hljs-keyword">false</span>);
 
-<span class="hljs-comment">// &#x5C0E;&#x5165;&#x540D;&#x7A31;&#x7A7A;&#x9593;&#x4E0B;&#x7684;&#x6240;&#x6709;Class</span>
-<span class="hljs-comment">// &#x4F7F;&#x7528;&#x540D;&#x7A31;&#x7A7A;&#x9593; (1)</span>
-<span class="hljs-keyword">using</span> Sample;
-<span class="hljs-comment">// &#x4F7F;&#x7528;&#x540D;&#x7A31;&#x7A7A;&#x9593; (2)</span>
-Sample.SomeClass ss = <span class="hljs-keyword">new</span> Sample.SomeClass();
-<span class="hljs-comment">// &#x4F7F;&#x7528;&#x540D;&#x7A31;&#x7A7A;&#x9593; (3) &#x4E0D;&#x5EFA;&#x8B70;&#x9019;&#x9EBC;&#x5BEB; &#x9664;&#x975E;&#x662F;&#x8A72;&#x540D;&#x7A31;&#x7A7A;&#x9593;&#x7684;&#x958B;&#x767C;&#x8005;</span>
-<span class="hljs-keyword">namespace</span> <span class="hljs-title">Sample</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">OtherClass</span> {
-        SomeClass sc = <span class="hljs-keyword">new</span> SomeClass();
+<span class="hljs-comment">// &#x8ABF;&#x6574;RectTransform&#x5143;&#x4EF6;&#x5167;&#x5C6C;&#x6027;</span>
+GetComponent&lt;RectTransform&gt;().sizeDelta = <span class="hljs-keyword">new</span> Vector2(width, height);
+</code></pre>
+                    <blockquote>
+                      <p>
+                        Ref:
+                        <a
+                          href="http://docs.unity3d.com/Manual/HOWTO-UICreateFromScripting.html"
+                          target="_blank"
+                          >how-to-create-ui-from-scripting</a
+                        >,
+                        <a
+                          href="http://docs.unity3d.com/ScriptReference/Transform.SetParent.html"
+                          target="_blank"
+                          >transform-setparent</a
+                        >,
+                        <a
+                          href="http://stackoverflow.com/questions/26336532/unity-4-6-image-scaled-disapear"
+                          target="_blank"
+                          >change-properties-of-rect-transform</a
+                        >
+                      </p>
+                    </blockquote>
+                    <h2 id="rigidbody">Rigidbody</h2>
+                    <p>
+                      &#x525B;&#x9AD4;&#xFF0C;&#x5373;&#x5177;&#x6709;&#x5BE6;&#x9AD4;&#x7684;&#x610F;&#x601D;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x5728;&#x8173;&#x672C;&#x7576;&#x4E2D;&#x4F7F;&#x7528;&#x5230;OnCollision&#x6216;OnTrigger&#x7B49;&#x78B0;&#x649E;&#x5075;&#x6E2C;&#x7684;&#x60C5;&#x6CC1;&#x4E0B;&#xFF0C;&#x5C31;&#x5FC5;&#x9808;&#x52A0;&#x5165;&#x6B64;&#x7269;&#x4EF6;&#x624D;&#x884C;&#x3002;
+                    </p>
+                    <ul>
+                      <li>
+                        Gravity Scale - &#x91CD;&#x529B;
+                        (&#x8A2D;&#x70BA;0&#x5247;&#x70BA;&#x7121;&#x91CD;&#x529B;&#x72C0;&#x614B;)
+                      </li>
+                      <li>
+                        Fixed Angle - &#x4FEE;&#x6B63;&#x89D2;&#x5EA6;
+                        (&#x52FE;&#x8D77;&#x5F8C;&#x5C31;&#x4E0D;&#x6703;&#x56E0;&#x70BA;&#x7269;&#x7406;&#x6548;&#x679C;&#x800C;&#x504F;&#x79FB;&#x65CB;&#x8F49;&#x89D2;&#x5EA6;)
+                      </li>
+                      <li>
+                        Is Kinematic -
+                        &#x88AB;&#x78B0;&#x649E;&#x5F8C;&#x4E0D;&#x6703;&#x6709;&#x4EFB;&#x4F55;&#x7269;&#x7406;&#x6548;&#x679C;&#x3002;
+                      </li>
+                    </ul>
+                    <pre><code class="lang-csharp"><span class="hljs-comment">// &#x6309;&#x4E0B;Space&#x4E4B;&#x5F8C;&#x89D2;&#x8272;&#x8DF3;&#x8E8D;&#xFF0C;&#x6BD4;&#x8D77;&#x4F7F;&#x7528;AddForce&#x76F8;&#x5C0D;&#x7A69;&#x5B9A;&#x3002;</span>
+<span class="hljs-keyword">bool</span> pressJump = <span class="hljs-keyword">false</span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span>(Input.GetButtonDown(<span class="hljs-string">&quot;Jump&quot;</span>)) { pressJump = <span class="hljs-keyword">true</span>; }
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">FixedUpdate</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span>(pressJump) {
+        pressJump = <span class="hljs-keyword">false</span>;
+        rigidbody.velocity = <span class="hljs-keyword">new</span> Vector2(forwardSpeed, jumpSpeed);
     }
 }
 </code></pre>
+                    <blockquote>
+                      <p>
+                        Ref:
+                        <a
+                          href="http://forum.unity3d.com/threads/trying-to-script-jumping-rigidbody-addforce-is-random.180832/#post-1236651"
+                          target="_blank"
+                          >trying-to-script-jumping-rigidbody-addforce-is-random</a
+                        >
+                      </p>
+                    </blockquote>
+                    <h2 id="trigger">Trigger</h2>
+                    <p>
+                      &#x89F8;&#x767C;&#x5668;&#xFF0C;&#x5E38;&#x7528;&#x4F86;&#x88FD;&#x4F5C;&#x958B;&#x95DC;&#x3001;&#x6A5F;&#x95DC;&#x4EE5;&#x53CA;&#x4E8B;&#x4EF6;&#x5075;&#x6E2C;&#x7B49;&#x529F;&#x80FD;&#x3002;
+                    </p>
+                    <h2 id="collider">Collider</h2>
+                    <p>
+                      &#x78B0;&#x649E;&#x9AD4;&#xFF0C;&#x5E38;&#x7528;&#x4F86;&#x88FD;&#x4F5C;&#x5730;&#x9762;&#x3001;&#x963B;&#x64CB;&#x7269;&#x4EE5;&#x53CA;&#x78B0;&#x649E;&#x5075;&#x6E2C;&#x7B49;&#x529F;&#x80FD;&#x3002;
+                    </p>
+                    <h2 id="audiolistener">AudioListener</h2>
+                    <p>
+                      &#x8CA0;&#x8CAC;&#x5834;&#x666F;&#x6536;&#x97F3;(&#x5305;&#x62EC;SFX&#x3001;BGM)&#x7684;&#x5143;&#x4EF6;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp"><span class="hljs-comment">// &#x66AB;&#x505C;&#x6536;&#x97F3; == &#x975C;&#x97F3;</span>
+AudioListener.pause = <span class="hljs-keyword">true</span>;
+</code></pre>
+                    <h2 id="audiosource">AudioSource</h2>
+                    <p>
+                      &#x627F;&#x8F09;&#x97F3;&#x6A02;&#x97F3;&#x6548;&#x7684;&#x5143;&#x4EF6;&#x3002;
+                    </p>
+                    <ul>
+                      <li>Mute - &#x975C;&#x97F3;</li>
+                      <li>
+                        Play On Awake -
+                        &#x4E00;&#x958B;&#x59CB;&#x7ACB;&#x5373;&#x64AD;&#x653E;
+                      </li>
+                      <li>Loop - &#x7121;&#x9650;&#x5FAA;&#x74B0;</li>
+                      <li>Pitch - &#x97F3;&#x8ABF;</li>
+                      <li>Volume - &#x97F3;&#x91CF;</li>
+                    </ul>
+                    <p>
+                      <strong
+                        >&#x6307;&#x5B9A;&#x97F3;&#x6A02;&#x7247;&#x6BB5;&#x4E26;&#x64AD;&#x653E;</strong
+                      >
+                    </p>
+                    <pre><code class="lang-csharp">AudioClip[] audioClips;
+AudioSource audio = GetComponent&lt;AudioSource&gt;();
+audio.clip = audioClips[<span class="hljs-number">0</span>];
+audio.Play();
+</code></pre>
+                    <h2 id="button-46">Button (4.6+)</h2>
+                    <p>
+                      UGUI&#x5167;&#x5EFA;&#x7684;&#x6309;&#x9215;&#x5143;&#x4EF6;&#x3002;
+                    </p>
+                    <ul>
+                      <li>
+                        Interactable - &#x662F;&#x5426;&#x555F;&#x7528;&#x3002;
+                      </li>
+                      <li>
+                        On Click() -
+                        &#x6309;&#x4E0B;&#x6309;&#x9215;&#x5F8C;&#x7684;&#x4E8B;&#x4EF6;&#x8655;&#x7406;&#x3002;(ex.
+                        &#x547C;&#x53EB;&#x7279;&#x5B9A;&#x7269;&#x4EF6;&#x8173;&#x672C;&#x4E2D;&#x7684;&#x51FD;&#x6578;)
+                      </li>
+                    </ul>
+                    <pre><code class="lang-csharp"><span class="hljs-keyword">using</span> UnityEngine.UI;
+
+<span class="hljs-comment">// &#x505C;&#x7528;&#x6309;&#x9215;</span>
+GetComponent&lt;Button&gt;().interactable = <span class="hljs-keyword">false</span>;
+</code></pre>
+                    <h2 id="event-trigger-46">Event Trigger (4.6+)</h2>
+                    <p>
+                      UGUI&#x7684;&#x4E8B;&#x4EF6;&#x5075;&#x6E2C;&#x89F8;&#x767C;&#x5668;&#x3002;
+                    </p>
+                    <ul>
+                      <li>PointerEnter (&#x6ED1;&#x9F20;&#x79FB;&#x5165;UI)</li>
+                      <li>PointerExit (&#x6ED1;&#x9F20;&#x79FB;&#x51FA;UI)</li>
+                    </ul>
+                    <h2 id="text-46">Text (4.6+)</h2>
+                    <p>
+                      UGUI&#x5167;&#x5EFA;&#x7684;&#x6587;&#x5B57;&#x65B9;&#x584A;&#x5143;&#x4EF6;&#x3002;
+                    </p>
+                    <pre><code class="lang-csharp"><span class="hljs-keyword">using</span> UnityEngine.UI;
+
+<span class="hljs-comment">// &#x6307;&#x5B9A;&#x5B57;&#x4E32;</span>
+GetComponent&lt;Text&gt;().text = <span class="hljs-string">&quot;Hello World!&quot;</span>;
+</code></pre>
+                    <h2 id="image-46">Image (4.6+)</h2>
+                    <p>
+                      UGUI&#x5167;&#x5EFA;&#x7684;&#x5716;&#x7247;&#x5143;&#x4EF6;&#x3002;
+                    </p>
+                    <h2 id="navmeshagent">NavMeshAgent</h2>
+                    <p>&#x81EA;&#x52D5;&#x5C0B;&#x8DEF;&#x5143;&#x4EF6;</p>
+                    <blockquote>
+                      <p>Window &gt; Navigation</p>
+                    </blockquote>
+                    <ul>
+                      <li>
+                        &#x5C07;&#x969C;&#x7919;&#x7269;&#x7684;navigation
+                        static&#x5C6C;&#x6027;&#x6253;&#x52FE;&#x3002;
+                      </li>
+                      <li>
+                        &#x5C07;NavMeshAgent&#x5143;&#x4EF6;&#x52A0;&#x5230;&#x9700;&#x8981;&#x81EA;&#x52D5;&#x5C0B;&#x8DEF;&#x7684;&#x7269;&#x4EF6;&#x4E0A;&#x3002;(&#x5982;.&#x6575;&#x4EBA;)
+                      </li>
+                      <li>
+                        &#x9EDE;&#x64CA;Bake&#x9215;&#x71D2;&#x51FA;&#x53EF;&#x8D70;&#x52D5;&#x5340;&#x584A;&#x3002;
+                      </li>
+                    </ul>
+                    <pre><code class="lang-csharp">NavMeshAgent navAgent = GetComponent&lt;NavMeshAgent&gt;();
+<span class="hljs-comment">// &#x7269;&#x4EF6;&#x671D;&#x76EE;&#x6A19;&#x7269;&#x4F4D;&#x7F6E;&#x79FB;&#x52D5;</span>
+navAgent.SetDestination(target.transform.position);
+</code></pre>
+                    <p>
+                      <strong
+                        >&#x63D0;&#x9192;&#xFF1A;&#x8DF3;&#x8E8D;&#x6216;&#x6500;&#x722C;&#x9700;&#x8981;&#x7528;&#x5230;Off
+                        Mesh Link&#xFF0C;&#x9700;&#x8981;Unity
+                        Pro&#x3002;</strong
+                      >
+                    </p>
+                    <blockquote>
+                      <p>
+                        Ref:
+                        <a
+                          href="http://unity3d.com/learn/tutorials/modules/beginner/live-training-archive/navmeshes"
+                          target="_blank"
+                          >Unity&#x5B98;&#x65B9;&#x7DDA;&#x4E0A;&#x6559;&#x5B78;</a
+                        >
+                      </p>
+                    </blockquote>
                   </section>
                 </div>
                 <div class="search-results">
@@ -576,16 +745,8 @@ Sample.SomeClass ss = <span class="hljs-keyword">new</span> Sample.SomeClass();
 
         <a
           href="Class.html"
-          class="navigation navigation-prev"
-          aria-label="Previous page: &#x985E;&#x5225;"
-        >
-          <i class="fa fa-angle-left"></i>
-        </a>
-
-        <a
-          href="../ScriptLifecycle.html"
-          class="navigation navigation-next"
-          aria-label="Next page: &#x4E8B;&#x4EF6;&#x9031;&#x671F;"
+          class="navigation navigation-next navigation-unique"
+          aria-label="Next page: &#x985E;&#x5225;"
         >
           <i class="fa fa-angle-right"></i>
         </a>
@@ -596,24 +757,48 @@ Sample.SomeClass ss = <span class="hljs-keyword">new</span> Sample.SomeClass();
         gitbook.push(function () {
           gitbook.page.hasChanged({
             page: {
-              title: "其他",
-              level: "1.3.1.3",
+              title: "元件",
+              level: "1.3.1.1",
               depth: 3,
               next: {
-                title: "事件週期",
-                level: "1.3.2",
-                depth: 2,
-                path: "ch2/ScriptLifecycle.md",
-                ref: "ch2/ScriptLifecycle.md",
-                articles: [],
-              },
-              previous: {
                 title: "類別",
                 level: "1.3.1.2",
                 depth: 3,
                 path: "ch2/Syntax/Class.md",
                 ref: "ch2/Syntax/Class.md",
                 articles: [],
+              },
+              previous: {
+                title: "語法介紹",
+                level: "1.3.1",
+                depth: 2,
+                ref: "",
+                articles: [
+                  {
+                    title: "元件",
+                    level: "1.3.1.1",
+                    depth: 3,
+                    path: "ch2/Syntax/Components.md",
+                    ref: "ch2/Syntax/Components.md",
+                    articles: [],
+                  },
+                  {
+                    title: "類別",
+                    level: "1.3.1.2",
+                    depth: 3,
+                    path: "ch2/Syntax/Class.md",
+                    ref: "ch2/Syntax/Class.md",
+                    articles: [],
+                  },
+                  {
+                    title: "其他",
+                    level: "1.3.1.3",
+                    depth: 3,
+                    path: "ch2/Syntax/Else.md",
+                    ref: "ch2/Syntax/Else.md",
+                    articles: [],
+                  },
+                ],
               },
               dir: "ltr",
             },
@@ -686,7 +871,7 @@ Sample.SomeClass ss = <span class="hljs-keyword">new</span> Sample.SomeClass();
                 "本書為Unity教學課程的筆記，主要內容圍繞著課堂專案所使用到的語法、操作以及技巧為主，供同學複習以及交流。",
             },
             file: {
-              path: "ch2/Syntax/Else.md",
+              path: "ch2/Syntax/Components.md",
               mtime: "2017-04-18T05:49:33.000Z",
               type: "markdown",
             },
@@ -698,21 +883,21 @@ Sample.SomeClass ss = <span class="hljs-keyword">new</span> Sample.SomeClass();
       </script>
     </div>
 
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
 
-    <script src="../gitbook/gitbook-plugin-comment/plugin.js"></script>
+    <script src="../../gitbook/gitbook-plugin-comment/plugin.js"></script>
 
-    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
 
-    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
 
-    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
 
-    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
 
-    <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+    <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
 
-    <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+    <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
   </body>
 </html>
